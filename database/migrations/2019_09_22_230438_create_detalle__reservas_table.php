@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductosTable extends Migration
+class CreateDetalleReservasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,15 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('detalle__reservas', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->unsignedInteger('reserva_id');
+            $table->foreign('reserva_id')->references('id')->on('reservas');
+            $table->unsignedInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
+
+
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('detalle__reservas');
     }
 }

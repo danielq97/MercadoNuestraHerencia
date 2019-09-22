@@ -15,6 +15,10 @@ class CreateUnidadMedidasTable extends Migration
     {
         Schema::create('unidad__medidas', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('nombre', 25);
+
+
             $table->timestamps();
         });
     }

@@ -15,6 +15,14 @@ class CreateUsuariosTable extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('cedula')->unique();
+            $table->string('nombre', 15);
+            $table->string('apellido', 15);
+
+            $table->unsignedInteger('rol_id');
+            $table->foreign('rol_id')->references('id')->on('rols');
+
             $table->timestamps();
         });
     }
