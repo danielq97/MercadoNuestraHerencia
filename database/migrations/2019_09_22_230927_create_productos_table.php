@@ -14,7 +14,7 @@ class CreateProductosTable extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
 
             $table->string('nombre', 25);
             $table->string('descripcion', 200);
@@ -22,8 +22,10 @@ class CreateProductosTable extends Migration
             $table->integer('cantidad');
             $table->string('foto');
 
+            $table->unsignedInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias');
-            $table->foreign('unidadmedida_id')->references('id')->on('unidad_medidas');
+            $table->unsignedInteger('unidadmedida_id');
+            $table->foreign('unidadmedida_id')->references('id')->on('unidad__medidas');
 
             $table->timestamps();
         });

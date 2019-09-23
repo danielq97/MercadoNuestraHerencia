@@ -13,14 +13,13 @@ class CreateDetalleReservasTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle__reservas', function (Blueprint $table) {
+        Schema::create('detalle_reservas', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->unsignedInteger('reserva_id');
             $table->foreign('reserva_id')->references('id')->on('reservas');
             $table->unsignedInteger('producto_id');
             $table->foreign('producto_id')->references('id')->on('productos');
-
 
             $table->timestamps();
         });
@@ -33,6 +32,6 @@ class CreateDetalleReservasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalle__reservas');
+        Schema::dropIfExists('detalle_reservas');
     }
 }

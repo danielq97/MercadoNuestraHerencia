@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Detalle_Reserva;
+use App\DetalleReserva;
 use Illuminate\Http\Request;
 
 class DetalleReservaController extends Controller
@@ -41,10 +41,10 @@ class DetalleReservaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Detalle_Reserva  $detalle_Reserva
+     * @param  \App\DetalleReserva  $detalleReserva
      * @return \Illuminate\Http\Response
      */
-    public function show(Detalle_Reserva $detalle_Reserva)
+    public function show(DetalleReserva $detalleReserva)
     {
         //
     }
@@ -52,10 +52,10 @@ class DetalleReservaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Detalle_Reserva  $detalle_Reserva
+     * @param  \App\DetalleReserva  $detalleReserva
      * @return \Illuminate\Http\Response
      */
-    public function edit(Detalle_Reserva $detalle_Reserva)
+    public function edit(DetalleReserva $detalleReserva)
     {
         //
     }
@@ -64,10 +64,10 @@ class DetalleReservaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Detalle_Reserva  $detalle_Reserva
+     * @param  \App\DetalleReserva  $detalleReserva
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Detalle_Reserva $detalle_Reserva)
+    public function update(Request $request, DetalleReserva $detalleReserva)
     {
         //
     }
@@ -75,10 +75,10 @@ class DetalleReservaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Detalle_Reserva  $detalle_Reserva
+     * @param  \App\DetalleReserva  $detalleReserva
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Detalle_Reserva $detalle_Reserva)
+    public function destroy(DetalleReserva $detalleReserva)
     {
         //
     }
