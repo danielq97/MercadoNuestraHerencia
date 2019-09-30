@@ -88,28 +88,59 @@
 <div class="bandaProductosVendidos">
     <h1 align="center">Productos más vendidos</h1>
 
+    
     <div id="contenedor_principal">
 <!--Primera Imagen-->
+
+<div class="row">
+
+<div class="column">
 <div class="contenedor_imagen_texto">
 <div class="imagen col-sm-4"><img src="https://diarioroatan.com/wp-content/uploads/2017/10/frijol-1.jpg"></div>
-<div class="texto">Texto</div>
+
+
+</div>
+<br><br>
+<div class= row>
+<p  class="ml-sm-5">Frijol cargamento</p>
+<button type="button" class="btn btn-success ml-sm-5">Agregar</button>
 </div>
 
+</div>
+
+
+   
+
 <!--Segunda Imagen-->
+<div class="column">
 <div class="contenedor_imagen_texto">
 <div class="imagen col-sm-4"><img src="https://i1.wp.com/lamariana.com.co/wp-content/uploads/2019/05/Arveja20en20cascara.jpg?fit=471%2C349&ssl=1"></div>
-<div class="texto">Texn</div>
+</div>
+<br><br>
+<div class= row>
+<p  class="ml-sm-5">Arveja</p>
+<button type="button" class="btn btn-success ml-sm-5">Agregar</button>
+</div>
 </div>
 
 <!--tercera Imagen-->
+<div class="column">
 <div class="contenedor_imagen_texto">
 <div class="imagen col-sm-4"><img src="https://static.iris.net.co/semana/upload/images/2013/1/13/329541_235110_1.jpg"></div>
-<div class="texto">Texn</div>
+</div>
+<br><br>
+<div class= row>
+<p  class="ml-sm-5">Tomate</p>
+<button type="button" class="btn btn-success ml-sm-5">Agregar</button>
+</div>
+
+</div>
+
 </div>
 </div>
 </div>
 
-<br><br><br><br><br><br>
+<br><br>
 <div class="eje">
 <h2 align="center">Sobre nosotros</h2>
 </div>
@@ -169,17 +200,7 @@ display:inline-block;
 vertical-align:top;
 overflow:hidden;
 }
-.texto{
-width:100%;
-height:auto;
-margin-top: 10px;
-display:inline;
-color: black;
-}
-.texto{
-height:auto;
-text-align:center
-}
+
 
 }
     </style>
