@@ -64,7 +64,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="http://hablemosdealimentos.com/wp-content/uploads/2018/08/El-Lulo.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/04/principalrrrrrrrrrr.jpg?itok=SR28-NuI" alt="First slide">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="https://biotrendies.com/wp-content/uploads/2015/06/manzana.jpg" alt="Second slide">
@@ -87,6 +87,26 @@
 
 <div class="bandaProductosVendidos">
     <h1 align="center">Productos más vendidos</h1>
+
+    <div id="contenedor_principal">
+<!--Primera Imagen-->
+<div class="contenedor_imagen_texto">
+<div class="imagen col-sm-4"><img src="https://diarioroatan.com/wp-content/uploads/2017/10/frijol-1.jpg"></div>
+<div class="texto">Texto</div>
+</div>
+
+<!--Segunda Imagen-->
+<div class="contenedor_imagen_texto">
+<div class="imagen col-sm-4"><img src="https://i1.wp.com/lamariana.com.co/wp-content/uploads/2019/05/Arveja20en20cascara.jpg?fit=471%2C349&ssl=1"></div>
+<div class="texto">Texn</div>
+</div>
+
+<!--tercera Imagen-->
+<div class="contenedor_imagen_texto">
+<div class="imagen col-sm-4"><img src="https://static.iris.net.co/semana/upload/images/2013/1/13/329541_235110_1.jpg"></div>
+<div class="texto">Texn</div>
+</div>
+</div>
 </div>
 
 <br><br><br><br><br><br>
@@ -117,7 +137,7 @@
 }
 
 .bandaProductosVendidos {
-margin-top: 20px;
+margin-top: 40px;
 }
 
 .eje{
@@ -128,9 +148,38 @@ margin-top: 20px;
   width: 700px;
 }
 
+.imagen{
+    height: 150px;
+    weight: 150px;
+}
 
 
-
+#contenedor_principal{
+width:1024px;
+height:auto;
+position:relative;
+margin:auto;
+margin-top: 20px;
+}
+.contenedor_imagen_texto{
+width:335px;
+height:auto;
+position:relative;
+display:inline-block;
+vertical-align:top;
+overflow:hidden;
+}
+.texto{
+width:100%;
+height:auto;
+margin-top: 10px;
+display:inline;
+color: black;
+}
+.texto{
+height:auto;
+text-align:center
+}
 
 }
     </style>
