@@ -30,3 +30,7 @@ Route::get('help', function () {
 Route::get('signup', function () {
     return view('signup');
 });
+
+Route::get('products', function () {
+    return view('products');
+});

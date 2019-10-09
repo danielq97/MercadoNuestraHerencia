@@ -1,70 +1,117 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Mercado Nuestra Herencia</title>
+@extends('layout/maintemaplate')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+@section('title', 'Mercado Nuestra Herencia')
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+@section('content')
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Mercado Nuestra Herencia</h1>
+        <div class="centro">
+  
+        <h1 align="center">Mercado Nuestra Herencia</h1>
+        </div>
+  
+  
+  
         
-    </body>
-</html>
+        <div class="row justify-content-center">
+      
+  
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/04/principalrrrrrrrrrr.jpg?itok=SR28-NuI" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://biotrendies.com/wp-content/uploads/2015/06/manzana.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://http2.mlstatic.com/arbol-de-guanabana-enano-p-maceta-o-tierra-ver-descripcion-D_NQ_NP_940104-MLM31228448187_062019-F.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  
+  </div>
+  
+  <div class="bandaProductosVendidos">
+      <h1 align="center">Productos más vendidos</h1>
+  
+      
+      <div id="contenedor_principal">
+  <!--Primera Imagen-->
+  
+  <div class="row">
+  
+  <div class="column">
+  <div class="contenedor_imagen_texto">
+  <div class="imagen col-sm-4"><img src="https://diarioroatan.com/wp-content/uploads/2017/10/frijol-1.jpg"></div>
+  
+  
+  </div>
+  <br><br>
+  <div class= row>
+  <p  class="ml-sm-5">Frijol cargamento</p>
+  <button type="button" class="btn btn-success ml-sm-5">Agregar</button>
+  </div>
+  
+  </div>
+  
+  
+     
+  
+  <!--Segunda Imagen-->
+  <div class="column">
+  <div class="contenedor_imagen_texto">
+  <div class="imagen col-sm-4"><img src="https://i1.wp.com/lamariana.com.co/wp-content/uploads/2019/05/Arveja20en20cascara.jpg?fit=471%2C349&ssl=1"></div>
+  </div>
+  <br><br>
+  <div class= row>
+  <p  class="ml-sm-5">Arveja</p>
+  <button type="button" class="btn btn-success ml-sm-5">Agregar</button>
+  </div>
+  </div>
+  
+  <!--tercera Imagen-->
+  <div class="column">
+  <div class="contenedor_imagen_texto">
+  <div class="imagen col-sm-4"><img src="https://static.iris.net.co/semana/upload/images/2013/1/13/329541_235110_1.jpg"></div>
+  </div>
+  <br><br>
+  <div class= row>
+  <p  class="ml-sm-5">Tomate</p>
+  <button type="button" class="btn btn-success ml-sm-5">Agregar</button>
+  </div>
+  
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  <br><br>
+  <div class="eje">
+  <h2 align="center">Sobre nosotros</h2>
+  </div>
+  
+  <script>
+      $( document ).ready(function(){
+      $('.carousel').carousel({
+        interval: 1000
+      })
+  });
+      </script>
+@endsection
