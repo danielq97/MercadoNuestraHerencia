@@ -14,8 +14,13 @@ div.ex1 {
 
 .row{
     margin-top: 10px;
+    
 }
 
+.nue{
+    margin-left: 20px;
+  
+}
 .vl {
   border-left: 4px solid black;
   height: 1000px;
@@ -23,6 +28,26 @@ div.ex1 {
 
 .mar{
     margin-left: 20px;
+}
+
+.sep{
+    margin-top: 25px;
+}
+
+.seg{
+    margin-top: 15px;
+}
+
+.sepa{
+    margin-top: 100px;
+}
+
+.sepa2{
+    margin-top: 220px;
+}
+
+.seg2{
+    margin-top:20px;
 }
 </style>
 
@@ -33,23 +58,45 @@ div.ex1 {
 <div>
 
 
-<div class="row">
+<div class="row nue">
 <div class="col xs-6">
 
 <h2 align="center">Crear o editar producto</h2>
 
 <br>
+<div class="row nue">
 
-<div class="column">
-    <div class="row">
-        <p class="col-xs 6">Nombre del producto</p>
-        <input type="col xs-6" name="Nombre" id="Nombre" value="">
+<div class="column" align="left">
+    
+<div class="imagen col-sm-4"><img src="https://i1.wp.com/lamariana.com.co/wp-content/uploads/2019/05/Arveja20en20cascara.jpg?fit=471%2C349&ssl=1"></div>
+
+
+
+<button type="" class="sepa2 ml-3">Seleccionar foto</button>
+
+
+
 </div>
 
-<div class="row">
-<p>Unidad de medida</p>
 
-<div class="dropdown">
+<div class="column nue" align="left">
+    
+        <p >Nombre del producto</p>
+        <p class="sep">Unidad de medida</p>
+        <p class="sep">Precio por unidad</p>
+        <p class="sep">Categoría</p>
+        <p class="sep">Descripción</p>
+        <p class="sepa">Cantidad en bodega</p>
+
+
+
+
+</div>
+<div class="column nue">
+
+<input type="text" name="Nombre" id="Nombre" value="">
+
+<div class="dropdown seg">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Kilo
   </button>
@@ -57,8 +104,36 @@ div.ex1 {
     <a class="dropdown-item" href="#">Libra</a>
     
   </div>
+
+  
 </div>
+
+<input type="text" name="Precio" id="Precio" value="" class="seg">
+
+<div class="dropdown seg">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Fruta
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Libra</a>
+    
+  </div>
+
+  
 </div>
+
+<textarea class="seg" rows="4" cols="50">
+
+</textarea>
+
+<br>
+<input type="text" name="Cantidad" id="Cantidad" value="" class="seg2">
+<br>
+<br>
+<button class="succes">Crear producto</button>
+
+</div>
+
 </div>
 
 </div>
