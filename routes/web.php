@@ -34,3 +34,5 @@ Route::get('signup', function () {
 Route::get('products', function () {
     return view('products');
 });
+
+Route::resource('productos', 'ProductoController');

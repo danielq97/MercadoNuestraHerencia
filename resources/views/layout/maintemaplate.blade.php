@@ -65,6 +65,10 @@
     .eje{
         margin-top: 2000 px;
     }
+
+    .sobre{
+      font-size: 16px;
+    }
     .carousel, .carousel-inner > .item > img {
       height: 500px; 
       width: 700px;

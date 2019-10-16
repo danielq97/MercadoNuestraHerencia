@@ -105,6 +105,12 @@
   <br><br>
   <div class="eje">
   <h2 align="center">Sobre nosotros</h2>
+
+  <br>
+
+  <h6  align="center" class="sobre">Nuestra Herencia es una asociación de jóvenes campesinos de la zona rural del municipio de Palmira 
+   ubicados <br> en la cuenca del Río Amaime y Río Nima y ofrecen diversos productos agropecuarios amigables con el medio <br> ambiente 
+    y con la salud del consumidor, generamos valor agregado con productos procesados por nuestra asociación.<h6>
   </div>
   
   <script>
