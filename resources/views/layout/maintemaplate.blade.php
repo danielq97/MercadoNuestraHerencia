@@ -11,6 +11,15 @@
           <script src="https://kit.fontawesome.com/623353ff82.js" crossorigin="anonymous"></script>
       </head>
         <body>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/login">Ingresar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/signup">Registrarse</a>
+                </li>
+              </ul>
+
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <div class="container-fluid">
                           <div class="navbar-header col-md-6">
@@ -27,7 +36,7 @@
                               <a class="nav-link" href="/about">Sobre nosotros</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="/products">Tienda</a>
+                              <a class="nav-link" href="/products">Ver nuestro productos</a>
                             </li>
                             <li class="nav-item mr-sm-4">
                               <a class="nav-link" href="/help">Ayuda</a>
@@ -46,8 +55,6 @@
         </body>
     
     <style>
-        
-    
         
     .centro{
         margin-top: 40px;
