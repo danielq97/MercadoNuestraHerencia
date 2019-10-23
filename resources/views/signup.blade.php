@@ -23,7 +23,7 @@
                                 </label>
                                 <div class="clear"> </div>
                             </div>
-                            <input type="submit" value="SIGNUP">
+                            <input type="submit" value="Registrarse">
                         </form>
                         <p>¿Ya tienes una cuenta? <a href="/login"> Iniciar Sesión!</a></p>
                     </div>

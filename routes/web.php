@@ -38,3 +38,6 @@ Route::get('signup', function () {
 //Route::put('user/{id}', 'ProductoContr@update');
 
 Route::resource('productos', 'ProductoController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

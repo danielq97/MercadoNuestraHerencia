@@ -13,15 +13,47 @@
           
 
           <script src="https://kit.fontawesome.com/623353ff82.js" crossorigin="anonymous"></script>
+        
       </head>
         <body>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/login">Ingresar</a>
+                        @if (session('status'))
+                        <a class="nav-link active" href="/login">Ingresar</a>
+                        @endif                
+                        <a class="nav-link active" href="/login">Perfil</a>
                 </li>
                 <li class="nav-item">
+                  
+                  @if (session('status'))
                   <a class="nav-link" href="/signup">Registrarse</a>
+                  @endif                
+                  <a class="nav-link" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Cerrar sesión</a>
+
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+
+
+
               </ul>
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
