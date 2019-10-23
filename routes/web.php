@@ -31,8 +31,10 @@ Route::get('signup', function () {
     return view('signup');
 });
 
-Route::get('products', function () {
-    return view('products');
-});
+//Route::get('products', function () {
+//    return view('products');
+//});
+
+//Route::put('user/{id}', 'ProductoContr@update');
 
 Route::resource('productos', 'ProductoController');

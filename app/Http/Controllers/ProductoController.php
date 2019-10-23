@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use App\Producto;
+use App\Unidad_Medida;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -24,7 +26,10 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create');
+
+        $datosunidad['unidadesmedidas'] = Unidad_Medida::paginate(5);
+        $datosCategoria['categorias'] = Categoria::paginate(5);
+        return view('productos/create',$datosunidad,$datosCategoria);
         //
     }
 
