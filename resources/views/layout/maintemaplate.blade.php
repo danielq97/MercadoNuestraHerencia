@@ -13,7 +13,10 @@
         <body>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/login">Ingresar</a>
+                        @if (session('status'))
+                        <a class="nav-link active" href="/login">Ingresar</a>
+                        @endif                
+                        <a class="nav-link active" href="/login">Perfil</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/signup">Registrarse</a>
