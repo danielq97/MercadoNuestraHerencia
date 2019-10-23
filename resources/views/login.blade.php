@@ -7,17 +7,10 @@
     
 <div class="login-page">
     <div class="form">
-      <form class="register-form">
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
-      </form>
       <form class="login-form">
         <input type="text" placeholder="usuario"/>
         <input type="password" placeholder="contraseña"/>
-        <button>login</button>
+        <button>Ingresar</button>
         <p class="message">¿No estas registeredo? <a href="/signup">Crea una cuenta</a></p>
       </form>
     </div>

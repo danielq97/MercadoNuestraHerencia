@@ -36,3 +36,6 @@ Route::get('products', function () {
 });
 
 Route::resource('productos', 'ProductoController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
