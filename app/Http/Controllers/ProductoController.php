@@ -29,7 +29,8 @@ class ProductoController extends Controller
 
         $datosunidad['unidadesmedidas'] = Unidad_Medida::paginate(5);
         $datosCategoria['categorias'] = Categoria::paginate(5);
-        return view('productos/create',$datosunidad,$datosCategoria);
+        $datosProducto['productoss'] = Producto::paginate(5);
+        return view('productos/create',$datosunidad,$datosCategoria,$datosProducto);
         //
     }
 
@@ -42,6 +43,12 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        $datosProducto =  request()->all();
+        $datosProducto = request()->except('_token');
+
+        Producto:: insert($datosProducto);
+
+        return response()-> json($datosProducto);
     }
 
     /**

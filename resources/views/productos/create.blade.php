@@ -63,7 +63,7 @@ div.ex1 {
 <!-- Espacio para formulario -->
 
 <form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
-
+{{csrf_field()}}
 
 <div class="col xs-6">
 
@@ -102,43 +102,44 @@ div.ex1 {
 
 <input type="text" name="nombre" id="nombre" value="">
 
-<div class="dropdown seg">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Kilo
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-   @foreach($unidadesmedidas as $unidadmedida)
-    <a class="dropdown-item" href="#">{{$unidadmedida->nombre}}</a>    
-   @endforeach
-  </div>
 
-  
+
+<div class="seg">
+<select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
+
+@foreach($unidadesmedidas as $unidadmedida)
+<option value="1">{{$unidadmedida->nombre}}</option>
+@endforeach
+
+
+</select>
 </div>
+
+
 
 <input type="text" name="precio" id="precio" value="" class="seg">
 
-<div class="dropdown seg">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Vegetales
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  @foreach($categorias as $categoria)
-    <a class="dropdown-item" href="#">{{$categoria->nombre}}</a>
-    @endforeach
-  </div>
 
-  
+<div class="seg">
+<select id="list" style="height:40px" name="categoria_id" id="categoria_id">
+
+@foreach($categorias as $categoria)
+<option value="1">{{$categoria->nombre}}</option>
+@endforeach
+
+
+</select>
 </div>
 
-<textarea class="seg" rows="4" cols="50">
+<textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion">
 
 </textarea>
 
 <br>
-<input type="text" name="Cantidad" id="Cantidad" value="" class="seg2">
+<input type="text" name="cantidad" id="cantidad" value="" class="seg2">
 <br>
 <br>
-<button class="succes">Crear producto</button>
+<input type="submit" value="Agregar">
 
 </div>
 
@@ -153,17 +154,11 @@ div.ex1 {
 <h2>Listado de productos publicados</h2>
 <div class="ex1">
 <ul class="list-group">
-  <li class="list-group-item active">Papa</li>
-  <li class="list-group-item">Miel de abeja</li>
-  <li class="list-group-item">Jugo de uva</li>
-  <li class="list-group-item">Mermelada de Fresa</li>
-  <li class="list-group-item">Cebolla cabezona blanca</li>
-  <li class="list-group-item">Crema de cafe</li>
-  <li class="list-group-item">Limon mandarino</li>
-  <li class="list-group-item">Limon ciciliano</li>
-  <li class="list-group-item">Café Quisquiloma</li>
-  <li class="list-group-item">Chocula</li>
-  <li class="list-group-item">Curuba</li>
+@foreach($categorias as $categoria)
+<li class="list-group-item">{{$categoria->nombre}}</li>
+@endforeach
+  
+
 </ul>
 </div>
 
