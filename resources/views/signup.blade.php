@@ -25,7 +25,6 @@
                             </div>
                             <input type="submit" value="Registrarse">
                         </form>
-                        <p>¿Ya tienes una cuenta? <a href="/login"> Iniciar Sesión!</a></p>
                     </div>
                 </div>
             
