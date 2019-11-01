@@ -6,6 +6,7 @@ use App\Categoria;
 use App\Producto;
 use App\Unidad_Medida;
 use Illuminate\Http\Request;
+use Auth;
 
 class ProductoController extends Controller
 {
@@ -16,7 +17,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        return view('productos/show');
     }
 
     /**
@@ -26,12 +27,14 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $datosProducto['productos'] = Producto::paginate(5);
         $datosunidad['unidadesmedidas'] = Unidad_Medida::paginate(5);
         $datosCategoria['categorias'] = Categoria::paginate(5);
-        
-        return view('productos/create',$datosunidad,$datosCategoria,$datosProducto);
-        //
+        $datosProducto['productoss'] = Producto::paginate(5);
+        if (Auth::user() != null) {
+            return view('productos/create', $datosunidad, $datosCategoria, $datosProducto);
+        } else {
+            return view('/home');
+        }
     }
 
     /**
@@ -46,9 +49,9 @@ class ProductoController extends Controller
         $datosProducto =  request()->all();
         $datosProducto = request()->except('_token');
 
-        Producto:: insert($datosProducto);
+        Producto::insert($datosProducto);
 
-        return response()-> json($datosProducto);
+        return response()->json($datosProducto);
     }
 
     /**
@@ -60,6 +63,7 @@ class ProductoController extends Controller
     public function show(Producto $producto)
     {
         //
+        return view('productos/show');
     }
 
     /**

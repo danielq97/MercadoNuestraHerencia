@@ -11,13 +11,7 @@
   
         <h1 align="center">Mercado Nuestra Herencia</h1>
         </div>
-  
-  
-  
-        
         <div class="row justify-content-center">
-      
-  
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -59,8 +53,6 @@
   <div class="column">
   <div class="contenedor_imagen_texto">
   <div class="imagen col-sm-4"><img src="https://diarioroatan.com/wp-content/uploads/2017/10/frijol-1.jpg"></div>
-  
-  
   </div>
   <br><br>
   <div class= row>
@@ -70,8 +62,6 @@
   
   </div>
   
-  
-     
   
   <!--Segunda Imagen-->
   <div class="column">
