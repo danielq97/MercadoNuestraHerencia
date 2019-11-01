@@ -8,13 +8,14 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    @if( auth()->check() )
+                        
+                            <a class="nav-link" href="#">{{ auth()->user()->name }}</a>
+                        
+                    @else
+                        <p>No estas logueado</p>
+                        
                     @endif
-
-                    You are logged in!
                 </div>
             </div>
         </div>

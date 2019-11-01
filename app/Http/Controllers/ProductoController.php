@@ -17,7 +17,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('/home');
+        return view('productos/show');
     }
 
     /**
@@ -63,6 +63,7 @@ class ProductoController extends Controller
     public function show(Producto $producto)
     {
         //
+        return view('productos/show');
     }
 
     /**

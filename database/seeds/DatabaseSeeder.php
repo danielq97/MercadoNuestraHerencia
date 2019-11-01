@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UnidadmedidaSeeder::class,CategoriaSeeder::class);
+        $this->call(CategoriaSeeder::class);
         
     }
 }
