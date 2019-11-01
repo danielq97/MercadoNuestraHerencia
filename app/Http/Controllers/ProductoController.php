@@ -26,10 +26,10 @@ class ProductoController extends Controller
      */
     public function create()
     {
-
+        $datosProducto['productos'] = Producto::paginate(5);
         $datosunidad['unidadesmedidas'] = Unidad_Medida::paginate(5);
         $datosCategoria['categorias'] = Categoria::paginate(5);
-        $datosProducto['productoss'] = Producto::paginate(5);
+        
         return view('productos/create',$datosunidad,$datosCategoria,$datosProducto);
         //
     }
