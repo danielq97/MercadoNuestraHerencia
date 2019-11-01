@@ -1,4 +1,3 @@
-
 @extends('layout/maintemaplate')
 
 @section('title', 'Mercado Nuestra Herencia')
@@ -13,11 +12,11 @@
         </div>
         <div class="row justify-content-center">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="https://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/04/principalrrrrrrrrrr.jpg?itok=SR28-NuI" alt="First slide">
@@ -44,7 +43,6 @@
   <div class="bandaProductosVendidos">
       <h1 align="center">Productos más vendidos</h1>
   
-      
       <div id="contenedor_principal">
   <!--Primera Imagen-->
   
@@ -101,7 +99,13 @@
   <h6  align="center" class="sobre">Nuestra Herencia es una asociación de jóvenes campesinos de la zona rural del municipio de Palmira 
    ubicados <br> en la cuenca del Río Amaime y Río Nima y ofrecen diversos productos agropecuarios amigables con el medio <br> ambiente 
     y con la salud del consumidor, generamos valor agregado con productos procesados por nuestra asociación.<h6>
+  
+  <div align="right" class="mr-5">
+    <p>Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
+    <p>Celular: 3183449646 - 3005103650</p>
   </div>
+    </div>
+  
   
   <script>
       $( document ).ready(function(){
