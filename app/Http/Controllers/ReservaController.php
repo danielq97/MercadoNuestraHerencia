@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Producto;
 use App\Reserva;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,8 @@ class ReservaController extends Controller
     public function index()
     {
         //
+        $datosProducto['productos'] = Producto::paginate(5);
+        return view('welcome',$datosProducto);
     }
 
     /**
