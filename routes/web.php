@@ -25,6 +25,10 @@ Route::get('help', function () {
     return view('help');
 });
 
+Route::get('boletinprecios', function () {
+    return view('boletines/boletinprecios');
+});
+
 
 
 //Route::get('products', function () {

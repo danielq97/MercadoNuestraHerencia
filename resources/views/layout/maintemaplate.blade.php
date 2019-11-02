@@ -37,6 +37,9 @@
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="productos/create">
                     Administrador  
+                    </a>
+                    <a class="dropdown-item" href="/boletinprecios">
+                    Precios sugeridos 
                     </a>   
                     <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
