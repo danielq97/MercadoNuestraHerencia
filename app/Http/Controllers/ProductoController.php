@@ -60,7 +60,7 @@ class ProductoController extends Controller
 
         Producto::insert($datosProducto);
 
-        return response()->json($datosProducto);
+        return view('welcome');
     }
 
     /**
