@@ -17,7 +17,10 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('productos/show');
+
+        $datosProductos['productos'] = Producto::paginate(5);
+        
+        return view('productos/show',$datosProductos);
     }
 
     /**
@@ -27,11 +30,13 @@ class ProductoController extends Controller
      */
     public function create()
     {
+
+       // $datosProductos['productos'] = Producto::paginate(5);
         $datosunidad['unidadesmedidas'] = Unidad_Medida::paginate(5);
         $datosCategoria['categorias'] = Categoria::paginate(5);
-        $datosProducto['productoss'] = Producto::paginate(5);
+        //$datosProducto['productos'] = Producto::paginate(5);
         if (Auth::user() != null) {
-            return view('productos/create', $datosunidad, $datosCategoria, $datosProducto);
+            return view('productos/create',$datosunidad,$datosCategoria);
         } else {
             return view('/home');
         }
@@ -49,6 +54,10 @@ class ProductoController extends Controller
         $datosProducto =  request()->all();
         $datosProducto = request()->except('_token');
 
+        if(request()->hasFile('foto')){
+            $datosProducto ['foto'] = request()->file('foto')->store('uploads','public');
+        }
+
         Producto::insert($datosProducto);
 
         return response()->json($datosProducto);
@@ -62,8 +71,16 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
+         
+
+        $productos = DB::table('productos')->paginate(15);
+
+
+        //$datosProducto['productos'] = Producto::paginate(5);
+         return view('productos/show', ['productos' => $productos]);
+      
         //
-        return view('productos/show');
+       
     }
 
     /**
@@ -99,4 +116,6 @@ class ProductoController extends Controller
     {
         //
     }
+
+   
 }

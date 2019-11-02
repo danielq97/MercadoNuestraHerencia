@@ -154,15 +154,16 @@ div.ex1 {
 <h2>Listado de productos publicados</h2>
 <div class="ex1">
 <ul class="list-group">
-@foreach($productos as $producto)
-<li class="list-group-item">{{$producto->nombre}}</li>
+
+@foreach($categorias as $categoria)
+<li class="list-group-item">>{{$categoria->nombre}}</li>
 @endforeach
-  
 
 </ul>
 </div>
 
 </div>
+
 </div>
 </div>
 
