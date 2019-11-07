@@ -55,7 +55,7 @@ div.ex1 {
 
 
 
-<div>
+<div class="col-12">
 
 
 <div class="row nue">
@@ -65,7 +65,7 @@ div.ex1 {
 <form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
 {{csrf_field()}}
 
-<div class="col xs-6">
+<div class="col md-6">
 
 <h2 align="center">Crear o editar producto</h2>
 
@@ -150,7 +150,7 @@ div.ex1 {
 </form>
 <div class="vl ml-2"></div>
 
-<div class="col xs-6 mar">
+<div class="col md-6 mar">
 <h2>Listado de productos publicados</h2>
 <div class="ex1">
 <ul class="list-group">
