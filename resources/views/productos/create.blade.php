@@ -43,19 +43,21 @@ div.ex1 {
 }
 
 .sepa2{
-    margin-top: 220px;
+    margin-top: 20px;
 }
 
 .seg2{
     margin-top:20px;
 }
+
+
 </style>
 
 
 
 
 
-<div class="col-12">
+<div>
 
 
 <div class="row nue">
@@ -65,27 +67,27 @@ div.ex1 {
 <form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
 {{csrf_field()}}
 
-<div class="col md-6">
+<div class="col-12 col-md-9">
 
 <h2 align="center">Crear o editar producto</h2>
 
 <br>
 <div class="row nue">
 
-<div class="column" align="left">
+<div class="col-md-3" align="left">
     
-<div class="imagen col-sm-4"><img src="http://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" width="300px" height="300px"></div>
+<div class="imagen col-sm-4"><img src="http://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" width="100px" height="100px"></div>
 
 
 
-<input type="file" class="sepa2 ml-3" name="foto" id="foto"></input>
+<input type="file" class="sepa2" name="foto" id="foto"></input>
 
 
 
 </div>
 
 
-<div class="column nue" align="left">
+<div class="col-md-4">
     
         <p >Nombre del producto</p>
         <p class="sep">Unidad de medida</p>
@@ -98,7 +100,7 @@ div.ex1 {
 
 
 </div>
-<div class="column nue">
+<div class="col-md-2">
 
 <input type="text" name="nombre" id="nombre" value="">
 
@@ -148,9 +150,9 @@ div.ex1 {
 </div>
 
 </form>
-<div class="vl ml-2"></div>
+<div class="vl ml-1"></div>
 
-<div class="col md-6 mar">
+<div class="col-12 col-md-3 mar">
 <h2>Listado de productos publicados</h2>
 <div class="ex1">
 <ul class="list-group">
