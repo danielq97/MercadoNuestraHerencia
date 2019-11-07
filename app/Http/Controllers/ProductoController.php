@@ -18,7 +18,7 @@ class ProductoController extends Controller
     public function index()
     {
 
-        $datosProductos['productos'] = Producto::paginate(5);
+        $datosProductos['productos'] = Producto::paginate(3);
         
         return view('productos/show',$datosProductos);
     }
@@ -60,7 +60,9 @@ class ProductoController extends Controller
 
         Producto::insert($datosProducto);
 
-        return view('welcome');
+        $datosProductos['productos'] = Producto::paginate(3);
+
+        return view('welcome',$datosProductos);
     }
 
     /**
