@@ -52,10 +52,23 @@ div.ex1 {
 </style>
 
 
+<table>
+    <tr>
+        <td>
+
+        </td>
+
+
+        <td>
+
+        </td>
+
+
+    </tr>
+</table>
 
 
 
-<div>
 
 
 <div class="row nue">
@@ -65,7 +78,7 @@ div.ex1 {
 <form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
 {{csrf_field()}}
 
-<div class="col xs-6">
+<div>
 
 <h2 align="center">Crear o editar producto</h2>
 
@@ -164,7 +177,6 @@ div.ex1 {
 
 </div>
 
-</div>
 </div>
 
 @endsection

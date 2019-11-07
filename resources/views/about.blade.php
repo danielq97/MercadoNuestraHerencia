@@ -14,7 +14,7 @@
                         <div class="aboutus-image float-left hidden-sm"><img src="https://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/04/principalrrrrrrrrrr.jpg?itok=SR28-NuI" alt=""></div>
                     </div>
                     <div class="col-md-8 col-sm-6 col-xs-12">
-                        <div class="aboutus-content ">
+                        <div class="aboutus-content">
                             <h1>¿Quienes somos?</h1>
                             <p>Nuestra Herencia es una asociación de jóvenes campesinos de la zona rural del municipio de palmira ubicados en la cuenca del río amaime y rio nima y te ofrecemos diversos productos agropecuarios amigables con el medio ambiente y con la salud del consumidor, generamos valor agregado con productos procesados por nuestra asociación.</p>
                             
@@ -53,10 +53,7 @@
                             <p>Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
                             <h1 class="mt-3">Números de télefono</h1>
                             <p>Estos son nuestros números de télefono</p>
-                            <p>Celular: 3183449646 - 3005103650</p>
-                            
-                            
-                            
+                            <p>Celular: 3183449646 - 3005103650</p>                            
                         </div>
                         
                     </div>
@@ -70,7 +67,7 @@
 
 .aboutus-area {
     padding-top:120px;
-     padding-bottom:120px;
+    padding-bottom:120px;
 }
 /*-- aboutus Image --*/
 .aboutus-image {

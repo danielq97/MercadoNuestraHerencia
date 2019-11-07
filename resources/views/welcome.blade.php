@@ -80,8 +80,12 @@
     y con la salud del consumidor, generamos valor agregado con productos procesados por nuestra asociación.<h6>
   
   <div align="right" class="mr-5">
-    <p>Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
-    <p>Celular: 3183449646 - 3005103650</p>
+    <address>
+      <p>Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
+      <p>Celular: 3183449646 - 3005103650</p>
+    </address>
+    
+    
   </div>
     </div>
   
