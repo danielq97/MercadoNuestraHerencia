@@ -49,7 +49,9 @@ div.ex1 {
 .seg2{
     margin-top:20px;
 }
-
+.nue2{
+    margin-left: 40px;
+}
 
 </style>
 
@@ -64,107 +66,118 @@ div.ex1 {
 
 <!-- Espacio para formulario -->
 
-<form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
-{{csrf_field()}}
-
-<div class="col-12 col-lg-9">
-
-<h2 align="center">Crear o editar producto</h2>
-
-<br>
-<div class="row nue">
-
-<div class="col-lg-3" align="left">
-    
-<div class="imagen col-sm-4"><img src="http://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" width="100px" height="100px"></div>
 
 
+<table>
 
-<input type="file" class="sepa2" name="foto" id="foto"></input>
+    <tr>
+            <form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
+                {{csrf_field()}}
+                
+                <div>
+                
+                <h2 align="center">Crear o editar producto</h2>
+                
+                <br>
+                <div class="row nue">
+                
+                <div align="left" class="column">
+                    
+                <div class="imagen"><img src="http://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" width="200px" height="200px"></div>
+                
+                <br><br><br>
+                <input type="file" name="foto" id="foto" style="width:200px"></input>
+                
+                
+                
+                </div>
+                
+                
+                <div class="nue">
+                    
+                        <p >Nombre del producto</p>
+                        <p class="sep">Unidad de medida</p>
+                        <p class="sep">Precio por unidad</p>
+                        <p class="sep">Categoría</p>
+                        <p class="sep">Descripción</p>
+                        <p class="sepa">Cantidad en bodega</p>
+                
+                
+                
+                
+                </div>
+                <div class="nue">
+                
+                <input type="text" name="nombre" id="nombre" value="">
+                
+                
+                
+                <div class="seg">
+                <select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
+                
+                @foreach($unidadesmedidas as $unidadmedida)
+                <option value="{{$unidadmedida->id}}">{{$unidadmedida->nombre}}</option>
+                @endforeach
+                
+                
+                </select>
+                </div>
+                
+                
+                
+                <input type="text" name="precio" id="precio" value="" class="seg">
+                
+                
+                <div class="seg">
+                <select id="list" style="height:40px" name="categoria_id" id="categoria_id">
+                
+                @foreach($categorias as $categoria)
+                <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                @endforeach
+                
+                
+                </select>
+                </div>
+                
+                <textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion" style="width:250px">
+                
+                </textarea>
+                
+                <br>
+                <input type="text" name="cantidad" id="cantidad" value="" class="seg2">
+                <br>
+                <br>
+                <input type="submit" value="Agregar">
+                
+                </div>
+                
+                </div>
+                
+                </div>
+                
+                </form>
+    </tr>
+    <tr>
+            <div class="nue2">
+                    <h2>Listado de productos publicados</h2>
+                    <div class="ex1">
+                    <ul class="list-group">
+                    
+                    @foreach($categorias as $categoria)
+                    <li class="list-group-item">>{{$categoria->nombre}}</li>
+                    @endforeach
+                    
+                    </ul>
+                    </div>
+                    
+                    </div>
+    </tr>
+
+
+</table>
 
 
 
-</div>
-
-
-<div class="col-lg-4">
-    
-        <p >Nombre del producto</p>
-        <p class="sep">Unidad de medida</p>
-        <p class="sep">Precio por unidad</p>
-        <p class="sep">Categoría</p>
-        <p class="sep">Descripción</p>
-        <p class="sepa">Cantidad en bodega</p>
-
-
-
-
-</div>
-<div class="col-lg-2">
-
-<input type="text" name="nombre" id="nombre" value="">
-
-
-
-<div class="seg">
-<select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
-
-@foreach($unidadesmedidas as $unidadmedida)
-<option value="{{$unidadmedida->id}}">{{$unidadmedida->nombre}}</option>
-@endforeach
-
-
-</select>
-</div>
-
-
-
-<input type="text" name="precio" id="precio" value="" class="seg">
-
-
-<div class="seg">
-<select id="list" style="height:40px" name="categoria_id" id="categoria_id">
-
-@foreach($categorias as $categoria)
-<option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
-@endforeach
-
-
-</select>
-</div>
-
-<textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion">
-
-</textarea>
-
-<br>
-<input type="text" name="cantidad" id="cantidad" value="" class="seg2">
-<br>
-<br>
-<input type="submit" value="Agregar">
-
-</div>
-
-</div>
-
-</div>
-
-</form>
-<div class="vl ml-1"></div>
-
-<div class="col-12 col-lg-3 mar">
-<h2>Listado de productos publicados</h2>
-<div class="ex1">
-<ul class="list-group">
-
-@foreach($categorias as $categoria)
-<li class="list-group-item">>{{$categoria->nombre}}</li>
-@endforeach
-
-</ul>
-</div>
-
-</div>
 
 
 @endsection
