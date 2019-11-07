@@ -67,14 +67,14 @@ div.ex1 {
 <form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
 {{csrf_field()}}
 
-<div class="col-12 col-md-9">
+<div class="col-12 col-lg-9">
 
 <h2 align="center">Crear o editar producto</h2>
 
 <br>
 <div class="row nue">
 
-<div class="col-md-3" align="left">
+<div class="col-lg-3" align="left">
     
 <div class="imagen col-sm-4"><img src="http://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" width="100px" height="100px"></div>
 
@@ -87,7 +87,7 @@ div.ex1 {
 </div>
 
 
-<div class="col-md-4">
+<div class="col-lg-4">
     
         <p >Nombre del producto</p>
         <p class="sep">Unidad de medida</p>
@@ -100,7 +100,7 @@ div.ex1 {
 
 
 </div>
-<div class="col-md-2">
+<div class="col-lg-2">
 
 <input type="text" name="nombre" id="nombre" value="">
 
@@ -152,7 +152,7 @@ div.ex1 {
 </form>
 <div class="vl ml-1"></div>
 
-<div class="col-12 col-md-3 mar">
+<div class="col-12 col-lg-3 mar">
 <h2>Listado de productos publicados</h2>
 <div class="ex1">
 <ul class="list-group">
