@@ -22,8 +22,8 @@ class CreateReservasTable extends Migration
             $table->integer('precio_total');
             $table->char('domicilio', 1);
 
-            $table->string('usuario_cedula');
-            $table->foreign('usuario_cedula')->references('cedula')->on('usuarios');
+            $table->unsignedInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('users');
 
 
             $table->timestamps();
