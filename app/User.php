@@ -10,6 +10,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
+    protected $attributes = [
+        'rol_id' => 1,
+     ];
+
     /**
      * The attributes that are mass assignable.
      *
