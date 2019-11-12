@@ -57,7 +57,7 @@
   <br><br>
   <div class= row>
   <p  class="ml-sm-5">{{$producto->nombre}}</p>
-  <button type="button" class="btn btn-success ml-sm-5 mb-2">Agregar</button>
+  <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Agregar</a>
   </div>
   
   </div>
