@@ -40,9 +40,10 @@ img {
             <h5>{{$producto->nombre}}</h5>
             <div class="row">
                 <h6>${{$producto->precio}}</h6>
-                
+                <a class="nav-link ml-4" href="#"><i class="fas fa-shopping-cart"></i>Agregar</a>
             </div>
-            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Agregar</a>
+            
+    
     </div>
     
     @endforeach
