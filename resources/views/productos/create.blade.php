@@ -161,7 +161,8 @@ div.ex1 {
                     <ul class="list-group">
                     
                         @foreach($data['productos'] as $producto)
-                        <li class="list-group-item">{{$producto->nombre}}</li>
+                        <a href="/productos/create" class="list-group-item list-group-item-action">{{$producto->nombre}}   <button>Editar</button></a>
+                       <!-- <li class="list-group-item">{{$producto->nombre}}</li> -->
                         @endforeach
                     
                     </ul>
