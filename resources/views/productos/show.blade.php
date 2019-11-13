@@ -33,8 +33,13 @@ img {
 
     @foreach($productos as $producto)
     
-    <div class="col-12 col-sm-6 col-lg-4 mt-4"><img src="{{asset('storage').'/'.$producto->foto}}" 
-            border="2" width="200" height="200">
+    <div class="col-12 col-sm-6 col-lg-4 mt-4">
+        <a href="{{url('/productoDetalle/'.$producto->id)}}">
+            <img src="{{asset('storage').'/'.$producto->foto}}" 
+            border="2" width="200" height="200"></img>
+        </a>
+        
+        
             <br>
            
             <h5>{{$producto->nombre}}</h5>
