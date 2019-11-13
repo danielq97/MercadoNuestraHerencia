@@ -42,7 +42,7 @@ img {
                 <h6>${{$producto->precio}}</h6>
                 
             </div>
-            <button type="button" class="btn btn-success">Agregar</button>
+            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Agregar</a>
     </div>
     
     @endforeach

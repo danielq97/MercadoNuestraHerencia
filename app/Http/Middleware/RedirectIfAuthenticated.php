@@ -18,7 +18,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            if ((Auth::user()->rol_id) == 1) {
+                return redirect('/');
+            } else if ((Auth::user()->rol_id) == 2) {
+                return redirect('/productos/create');
+            }
         }
 
         return $next($request);

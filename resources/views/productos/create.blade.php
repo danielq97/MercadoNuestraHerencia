@@ -101,10 +101,7 @@ div.ex1 {
                         <p class="sep">Categoría</p>
                         <p class="sep">Descripción</p>
                         <p class="sepa">Cantidad en bodega</p>
-                
-                
-                
-                
+
                 </div>
                 <div class="nue">
                 
@@ -159,18 +156,18 @@ div.ex1 {
     </tr>
     <tr>
             <div class="nue2">
-                    <h2>Listado de productos publicados</h2>
-                    <div class="ex1">
+                <h2>Listado de productos publicados</h2>
+                <div class="ex1">
                     <ul class="list-group">
                     
-                    @foreach($categorias as $categoria)
-                    <li class="list-group-item">>{{$categoria->nombre}}</li>
-                    @endforeach
+                        @foreach($categorias as $categoria)
+                        <li class="list-group-item">{{$categoria->nombre}}</li>
+                        @endforeach
                     
                     </ul>
-                    </div>
+                </div>
                     
-                    </div>
+            </div>
     </tr>
 
 
