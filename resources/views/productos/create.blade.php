@@ -112,7 +112,7 @@ div.ex1 {
                 <div class="seg">
                 <select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
                 
-                @foreach($unidadesmedidas as $unidadmedida)
+                @foreach($data['unidadesmedidas'] as $unidadmedida)
                 <option value="{{$unidadmedida->id}}">{{$unidadmedida->nombre}}</option>
                 @endforeach
                 
@@ -128,7 +128,7 @@ div.ex1 {
                 <div class="seg">
                 <select id="list" style="height:40px" name="categoria_id" id="categoria_id">
                 
-                @foreach($categorias as $categoria)
+                @foreach($data['categorias'] as $categoria)
                 <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
                 @endforeach
                 
@@ -160,8 +160,8 @@ div.ex1 {
                 <div class="ex1">
                     <ul class="list-group">
                     
-                        @foreach($categorias as $categoria)
-                        <li class="list-group-item">{{$categoria->nombre}}</li>
+                        @foreach($data['productos'] as $producto)
+                        <li class="list-group-item">{{$producto->nombre}}</li>
                         @endforeach
                     
                     </ul>

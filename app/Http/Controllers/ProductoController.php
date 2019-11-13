@@ -31,12 +31,16 @@ class ProductoController extends Controller
     public function create()
     {
 
+        $data =  array();
+        $data['unidadesmedidas']  =  Unidad_Medida::paginate(5);
+        $data['categorias']     =  Categoria::paginate(5);
+        $data['productos']     =  Producto::paginate(5);
        
-        $datosunidad['unidadesmedidas'] = Unidad_Medida::paginate(5);
-        $datosCategoria['categorias'] = Categoria::paginate(5);
-        $datosProducto['productos'] = Producto::paginate(5);
+      //  $datosunidad['unidadesmedidas'] = Unidad_Medida::paginate(5);
+       // $datosCategoria['categorias'] = Categoria::paginate(5);
+      //  $datosProducto['productos'] = Producto::paginate(5);
         if (Auth::user()->rol_id==2 ) {
-            return view('productos/create',$datosunidad,$datosCategoria);
+            return view('productos/create',compact("data"));
         } else {
             return view('/');
         }
