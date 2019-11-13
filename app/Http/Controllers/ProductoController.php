@@ -34,7 +34,7 @@ class ProductoController extends Controller
         $data =  array();
         $data['unidadesmedidas']  =  Unidad_Medida::paginate(5);
         $data['categorias']     =  Categoria::paginate(5);
-        $data['productos']     =  Producto::paginate(5);
+        $data['productos']     =  Producto::all();
 
         if (Auth::user()->rol_id==2 ) {
             return view('productos/create',compact("data"));
@@ -81,6 +81,7 @@ class ProductoController extends Controller
 
         //$datosProducto['productos'] = Producto::paginate(5);
          return view('productos/show', ['productos' => $productos]);
+         
       
         //
        
@@ -92,8 +93,17 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
+        $producto = Producto :: findOrFail($id);
+        $data =  array();
+        $data['unidadesmedidas']  =  Unidad_Medida::paginate(5);
+        $data['categorias']     =  Categoria::paginate(5);
+        $data['productos']     =  Producto::all();
+
+
+        return view('productos.edit',compact('producto'),compact("data"));
+
         //
     }
 

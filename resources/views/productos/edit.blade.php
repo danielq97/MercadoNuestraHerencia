@@ -71,8 +71,9 @@ div.ex1 {
 <table>
 
     <tr>
-            <form method="post" action="{{url('/productos')}}" enctype="multipart/form-data">
-                {{csrf_field()}}
+            <form method="post" action="{{url('/productos/'.$producto->id)}}" enctype="multipart/form-data">
+            {{csrf_field()}}
+            {{method_field('PATCH')}}
                 
                 <div>
                 
@@ -83,7 +84,7 @@ div.ex1 {
                 
                 <div align="left" class="column">
                     
-                <div class="imagen"><img src="http://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" width="200px" height="200px"></div>
+                <div class="imagen"><img src="{{asset('storage').'/'.$producto->foto}}" width="200px" height="200px"></div>
                 
                 <br><br><br>
                 <input type="file" name="foto" id="foto" style="width:200px"></input>
@@ -105,7 +106,7 @@ div.ex1 {
                 </div>
                 <div class="nue">
                 
-                <input type="text" name="nombre" id="nombre" value="">
+                <input type="text" name="nombre" id="nombre" value="{{$producto->nombre}}">
                 
                 
                 
@@ -122,7 +123,7 @@ div.ex1 {
                 
                 
                 
-                <input type="text" name="precio" id="precio" value="" class="seg">
+                <input type="text" name="precio" id="precio" value="{{$producto->precio}}" class="seg">
                 
                 
                 <div class="seg">
@@ -137,14 +138,14 @@ div.ex1 {
                 </div>
                 
                 <textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion" style="width:250px">
-                
+                {{$producto->descripcion}}
                 </textarea>
                 
                 <br>
-                <input type="text" name="cantidad" id="cantidad" value="" class="seg2">
+                <input type="text" name="cantidad" id="cantidad" value="{{$producto->cantidad}}" class="seg2">
                 <br>
                 <br>
-                <input type="submit" value="Agregar">
+                <input type="submit" value="Actualizar">
                 
                 </div>
                 
@@ -160,12 +161,13 @@ div.ex1 {
                 <div class="ex1">
                     <ul class="list-group">
                     
-                        @foreach($data['productos'] as $producto)
+                    @foreach($data['productos'] as $producto)
                         <a class="list-group-item list-group-item-action">{{$producto->nombre}}  <form action="{{url('/productos/'.$producto->id.'/edit')}}" >
     <input type="submit" value="Editar" />
 </form></a>
                        <!-- <li class="list-group-item">{{$producto->nombre}}</li> -->
                         @endforeach
+                    
                     
                     </ul>
                 </div>
