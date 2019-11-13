@@ -113,6 +113,7 @@ div.ex1 {
                 <div class="seg">
                 <select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
                 
+                <option value="{{$unidadmedidaproducto1->id}}">{{$unidadmedidaproducto1->nombre}} </option>
                 @foreach($data['unidadesmedidas'] as $unidadmedida)
                 <option value="{{$unidadmedida->id}}">{{$unidadmedida->nombre}}</option>
                 @endforeach
@@ -129,6 +130,7 @@ div.ex1 {
                 <div class="seg">
                 <select id="list" style="height:40px" name="categoria_id" id="categoria_id">
                 
+                <option value="{{$categoriaproducto1->id}}">{{$categoriaproducto1->nombre}}</option>
                 @foreach($data['categorias'] as $categoria)
                 <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
                 @endforeach
@@ -137,9 +139,7 @@ div.ex1 {
                 </select>
                 </div>
                 
-                <textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion" style="width:250px">
-                {{$producto->descripcion}}
-                </textarea>
+                <textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion" style="width:250px">{{$producto->descripcion}}</textarea>
                 
                 <br>
                 <input type="text" name="cantidad" id="cantidad" value="{{$producto->cantidad}}" class="seg2">
