@@ -8,7 +8,7 @@
 
         <div class="centro">
   
-        <h1 align="center">Mercado Nuestra Herencia</h1>
+        <h1 align="center">Mercado Somos Nuestra Herencia</h1>
         </div>
         <div class="row justify-content-center">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -75,7 +75,7 @@
 
   <br>
 
-  <h6  align="center" class="sobre">Nuestra Herencia es una asociación de jóvenes campesinos de la zona rural del municipio de Palmira 
+  <h6  align="center" class="sobre">Somos Nuestra Herencia es una asociación de jóvenes campesinos de la zona rural del municipio de Palmira 
    ubicados <br> en la cuenca del Río Amaime y Río Nima y ofrecen diversos productos agropecuarios amigables con el medio <br> ambiente 
     y con la salud del consumidor, generamos valor agregado con productos procesados por nuestra asociación.<h6>
   
