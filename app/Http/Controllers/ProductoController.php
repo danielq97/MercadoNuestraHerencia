@@ -110,7 +110,7 @@ class ProductoController extends Controller
         $data['unidadesmedidas']  =  Unidad_Medida::where('id', '!=', $unidadmedidaproducto1->id)->get();
         $data['categorias']     =  Categoria::where('id', '!=', $categoriaproducto1->id)->get();
         $data['productos']     =  Producto::all();
-        
+
         return view('productos.edit',compact('producto'),compact("data",'unidadmedidaproducto1','categoriaproducto1'));
 
         //
@@ -145,13 +145,17 @@ class ProductoController extends Controller
         //Consultar como quedó el registro actual una vez que se guardo con el update
         $producto = Producto :: findOrFail($id);
 
-        $data =  array();
-        $data['unidadesmedidas']  =  Unidad_Medida::paginate(5);
-        $data['categorias']     =  Categoria::paginate(5);
+        $unidadmedidaproducto1 = Unidad_Medida:: findOrFail($producto->unidadmedida_id);
+        $categoriaproducto1 = Categoria :: findOrFail($producto->categoria_id);
+
+
+        $data =  array();        
+        $data['unidadesmedidas']  =  Unidad_Medida::where('id', '!=', $unidadmedidaproducto1->id)->get();
+        $data['categorias']     =  Categoria::where('id', '!=', $categoriaproducto1->id)->get();
         $data['productos']     =  Producto::all();
 
 
-        return view('productos.edit',compact('producto'),compact("data"));
+        return view('productos.edit',compact('producto'),compact("data",'unidadmedidaproducto1','categoriaproducto1'));
     }
 
     /**
