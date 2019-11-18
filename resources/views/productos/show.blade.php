@@ -38,10 +38,7 @@ img {
             <img src="{{asset('storage').'/'.$producto->foto}}" 
             border="2" width="200" height="200"></img>
         </a>
-        
-        
             <br>
-           
             <h5>{{$producto->nombre}}</h5>
             <div class="row">
                 <h6>${{$producto->precio}}</h6>

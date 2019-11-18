@@ -11,10 +11,6 @@
 |
 */
 
-//Route::get('/', function () {
-  //  return view('welcome');
-//});
-
 
 
 Route::get('about', function () {
@@ -29,11 +25,6 @@ Route::get('boletinprecios', function () {
     return view('boletines/boletinprecios');
 });
 
-
-
-//Route::get('products', function () {
-//    return view('products');
-//});
 
 //Route::put('user/{id}', 'ProductoContr@update');
 
