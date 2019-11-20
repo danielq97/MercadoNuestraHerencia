@@ -52,7 +52,7 @@
 
   <div class="column">
   <div class="contenedor_imagen_texto">
-  <div class="imagen col-sm-4"><img src="{{asset('storage').'/'.$producto->foto}}" width="150"></div>
+  <div class="imagen col-sm-4"><a href="{{url('/productoDetalle/'.$producto->id)}}"><img src="{{asset('storage').'/'.$producto->foto}}" width="150"></div>
   </div>
   <br><br>
   <div class= row>
