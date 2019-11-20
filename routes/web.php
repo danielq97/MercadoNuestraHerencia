@@ -25,6 +25,7 @@ Route::get('boletinprecios', function () {
     return view('boletines/boletinprecios');
 });
 
+Route::get('/cart', 'DetalleReservaController@index');
 
 //Route::put('user/{id}', 'ProductoContr@update');
 
