@@ -22,6 +22,8 @@ class CreateReservasTable extends Migration
             $table->integer('precio_total');
             $table->char('domicilio', 1);
 
+            $table->string('estado',20);
+
             $table->unsignedInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('users');
 
