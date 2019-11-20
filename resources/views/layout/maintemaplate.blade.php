@@ -54,8 +54,13 @@
                    
                    @if (Auth::user()->rol_id==2)
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    
+                    <a class="dropdown-item" href="/pedidosDisponibles">
+                      Administrar pedidos
+                    </a>
+                    
                     <a class="dropdown-item" href="/productos/create">
-                    Administrador  
+                    Administrar productos  
                     </a>
                     <a class="dropdown-item" href="/boletinprecios">
                     Precios sugeridos 

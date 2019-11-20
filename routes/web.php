@@ -37,3 +37,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'ReservaController@index');
 
 Route::get('/productoDetalle/{producto}','ProductoDetailController@index');
+
+
+Route::get('/pedidosDisponibles','PedidosDisponiblesController@index');
