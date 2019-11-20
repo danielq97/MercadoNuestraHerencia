@@ -15,7 +15,7 @@
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                 <h3>{{ $producto->nombre }}</h3>
                 
-                <p class="price"><span>Precio por unidad: {{ $producto->precio }}</span></p>
+                <p class="price"><span>Precio por {{ $unidadmedida->nombre }}: <strong>$ {{ $producto->precio }}</strong> </span></p>
                 <p>{{ $producto->descripcion }}</p>
                     <div class="row mt-4">
                         <div class="col-md-6">
@@ -53,7 +53,7 @@
     <div class="container">
             <div class="row justify-content-center mb-3 pb-3">
       <div class="col-md-12 heading-section text-center ftco-animate">
-          <span class="subheading">Products</span>
+          <span class="subheading">Productos</span>
         <h2 class="mb-4">Productos relacionados</h2>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
       </div>
