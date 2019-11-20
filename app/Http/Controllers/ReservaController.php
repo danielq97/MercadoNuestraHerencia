@@ -73,7 +73,7 @@ class ReservaController extends Controller
      */
     public function update(Request $request, Reserva $reserva)
     {
-        //
+        return view ('/carrito/formularioDatos');
     }
 
     /**
