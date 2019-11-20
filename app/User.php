@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-
+    //Rol por defecto al crear un user
     protected $attributes = [
         'rol_id' => 1,
     ];

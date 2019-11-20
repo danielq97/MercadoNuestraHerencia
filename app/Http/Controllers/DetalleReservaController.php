@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DetalleReserva;
+use App\Producto;
 use Illuminate\Http\Request;
 
 class DetalleReservaController extends Controller
@@ -14,6 +15,8 @@ class DetalleReservaController extends Controller
      */
     public function index()
     {
+        $datosProducto['productos'] = Producto::paginate(3);
+        return view('carrito/pedido',$datosProducto);
         //
     }
 

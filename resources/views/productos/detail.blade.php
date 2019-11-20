@@ -53,14 +53,14 @@
                    <i class="ion-ios-remove"></i>
                     </button>
                     </span>
-                 <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                 <input type="text" id="cantidad" name="cantidad" class="form-control input-number" value="1" min="1" max="100">
                  <span class="input-group-btn ml-2">
                     <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
                      <i class="ion-ios-add"></i>
                  </button>
                  </span>
               </div>
-              <div class="w-100"></div>
+              
               <div class="col-md-12">
                   <p style="color: #000;">{{ $producto->cantidad }}     {{ $unidadmedida->nombre }} disponible en bodega</p>
               </div>
