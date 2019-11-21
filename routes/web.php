@@ -42,3 +42,5 @@ Route::get('/productoDetalle/{producto}','ProductoDetailController@index');
 Route::get('/pedidosDisponibles','PedidosDisponiblesController@index');
 
 Route::get('/datosContacto','ReservaController@update');
+
+Route::get('/mispedidos','PedidosUserController@index');
