@@ -14,7 +14,7 @@ class DetalleReserva extends Model
 
     //Método para obtener el producto de un detalle
     public function getProducto(){
-        return $this -> belongsTo(('App\Producto'));
+        return $this -> belongsTo(('App\ProductoReserva'));
     }
 
 }

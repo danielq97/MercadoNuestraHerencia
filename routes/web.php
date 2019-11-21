@@ -41,4 +41,8 @@ Route::get('/productoDetalle/{producto}','ProductoDetailController@index');
 
 Route::get('/pedidosDisponibles','PedidosDisponiblesController@index');
 
+
+//Ruta para crear la reserva con el primer producto añadido
+Route::post('/reserva/{id}','ReservaController@store' );
+
 Route::get('/datosContacto','ReservaController@update');

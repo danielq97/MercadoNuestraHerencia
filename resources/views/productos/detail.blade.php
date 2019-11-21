@@ -24,24 +24,16 @@
                         </div>
                         <div class="w-100"></div>
                         <div class="input-group col-md-6 d-flex mb-3">
-                 <span class="input-group-btn mr-2">
-                    <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-                   <i class="ion-ios-remove"></i>
-                    </button>
-                    </span>
+                 
                  <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="{{$producto->cantidad}}">
-                 <span class="input-group-btn ml-2">
-                    <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-                     <i class="ion-ios-add"></i>
-                 </button>
-                 </span>
+                 
               </div>
               <div class="w-100"></div>
               <div class="col-md-12">
                   <p style="color: #000;">{{ $producto->cantidad }}     {{ $unidadmedida->nombre }} disponible en bodega</p>
               </div>
           </div>
-          <p><a href="" class="btn btn-black py-3 px-5">Agregar al carrito</a></p>
+          <p><a href="/productoDetalle/{{$producto->id}}" class="btn btn-black py-3 px-5">Agregar al carrito</a></p>
             </div>
         </div>
     </div>
@@ -179,42 +171,6 @@
 </section>
 
 
-<script>
-    $(document).ready(function(){
-
-    var quantitiy=0;
-       $('.quantity-right-plus').click(function(e){
-            
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-            
-            // If is not undefined
-                
-                $('#quantity').val(quantity + 1);
-
-              
-                // Increment
-            
-        });
-
-         $('.quantity-left-minus').click(function(e){
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-            
-            // If is not undefined
-          
-                // Increment
-                if(quantity>0){
-                $('#quantity').val(quantity - 1);
-                }
-        });
-        
-    });
-</script>
 
 </body>
 
