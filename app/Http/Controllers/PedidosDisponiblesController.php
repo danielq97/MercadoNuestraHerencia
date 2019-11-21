@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class PedidosDisponiblesController extends Controller
 {
     public function index() {
-        $datosPedidosDisponibles['reservas'] = Reserva::paginate(12);
-        return view('/adminViews/pedidosDisponibles', $datosPedidosDisponibles);
+        $reservas['reservas'] = Reserva::paginate(12);
+        return view('/adminViews/pedidosDisponibles', $reservas);
      }
      public function create() {
         echo 'create';
