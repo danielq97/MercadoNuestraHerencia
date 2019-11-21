@@ -46,3 +46,5 @@ Route::get('/pedidosDisponibles','PedidosDisponiblesController@index');
 Route::post('/reserva/{id}','ReservaController@store' );
 
 Route::get('/datosContacto','ReservaController@update');
+
+Route::get('/mispedidos','PedidosUserController@index');

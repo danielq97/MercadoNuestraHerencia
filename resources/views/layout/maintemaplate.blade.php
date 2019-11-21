@@ -77,7 +77,7 @@
                    </div>
                    @else
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="productos/create">
+                    <a class="dropdown-item" href="/mispedidos">
                     Pedidos realizados  
                     </a>  
                     <a class="dropdown-item" href="{{ route('logout') }}"
