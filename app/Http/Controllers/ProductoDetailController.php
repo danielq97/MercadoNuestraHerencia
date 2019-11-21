@@ -12,7 +12,9 @@ class ProductoDetailController extends Controller
     public function index($id) {
         $producto = Producto::findOrFail($id);        
         $unidadmedida = Unidad_Medida::findOrFail( $producto->unidadmedida_id   );
-        return view('/productos/detail',compact('producto'),compact('unidadmedida'));
+        //$productosPorCategoria=array();
+        $productosPorCategoria['productosPorCategoria'] = Producto::where ('categoria_id','=',$producto->categoria_id); 
+        return view('/productos/detail',compact('producto'),compact('unidadmedida','productosPorCategoria'));
 
         
      }
