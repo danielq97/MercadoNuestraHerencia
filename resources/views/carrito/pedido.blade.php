@@ -18,9 +18,9 @@
 						    <tbody>
                                 @foreach($productos as $producto)
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove"></td>
 						        
-						        <td class="image-prod"><img src="{{asset('storage').'/'.$producto->foto}}" width="150"></div></td>
+						        <td class="image-prod"><img src="{{asset('storage').'/'.$producto->foto}}" width="150" height="150"></div></td>
 						        
 						        <td class="product-name">
 						        	<h3>{{$producto->nombre}}</h3>
@@ -31,7 +31,7 @@
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+					             	<input width="100" type="number" name="quantity" class="quantity form-control input-number" value="1" min="1" max="{{$producto->cantidad}}">
 					          	</div>
 					          </td>
 						        
@@ -40,6 +40,20 @@
                     @endforeach
 						    </tbody>
 						  </table>
-					  </div>
+</div>
+                      
+                      <br>
+                      <div align="right">
+                      <button class="mr-4" >Continuar pedido</button>
+
+                      </div>
+
+               
+
+                     
+
+                    
+
+                      
 
 @endsection
