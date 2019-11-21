@@ -44,7 +44,7 @@
                       
                       <br>
                       <div align="right">
-                      <button class="mr-4" >Continuar pedido</button>
+					  <p class="mr-4"><a href="/datosContacto">Continuar pedido</a></p>
 
                       </div>
 
