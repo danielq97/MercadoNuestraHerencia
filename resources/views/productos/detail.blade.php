@@ -6,6 +6,10 @@
 
 <body>
     
+
+<form method="post" action="{{url('/reserva/'.$producto->id)}}">
+{{csrf_field()}}
+
 <section class="ftco-section">
     <div class="container">
         <div class="row">
@@ -25,7 +29,7 @@
                         <div class="w-100"></div>
                         <div class="input-group col-md-6 d-flex mb-3">
                  
-                 <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="{{$producto->cantidad}}">
+                 <input type="number" id="cantidad" name="cantidad" class="form-control input-number" value="1" min="1" max="{{$producto->cantidad}}">
                  
               </div>
               <div class="w-100"></div>
@@ -33,7 +37,7 @@
                   <p style="color: #000;">{{ $producto->cantidad }}     {{ $unidadmedida->nombre }} disponible en bodega</p>
               </div>
           </div>
-          <p><a href="/productoDetalle/{{$producto->id}}" class="btn btn-black py-3 px-5">Agregar al carrito</a></p>
+          <input type="submit" value="Agregar al carrito">
             </div>
         </div>
     </div>
@@ -62,7 +66,7 @@
                     <br><br>
                     <div class= row>
                     <p  class="ml-sm-5">{{$producto->nombre}}</p>
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Agregar</a>
+                    <input type="submit" value="Agregar"><i class="fas fa-shopping-cart"></i>Agregar</a>
                     </div>
                     
                     </div>
@@ -71,7 +75,7 @@
     </div>
 </section>
 
-
+</form>
 
 </body>
 

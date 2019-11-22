@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\DetalleReserva;
 use App\Producto;
+use App\ProductoReserva;
 use App\Reserva;
+use Auth;
 use Illuminate\Http\Request;
 
 class ReservaController extends Controller
@@ -38,11 +41,49 @@ class ReservaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($idUser)
+    public function store($idProducto,Request $request)
     {
         //
 
-        return view ('/productoDetalle');
+        
+
+
+        $reserva = new Reserva();
+        $reserva->usuario_id = Auth::user()->id;
+        $reserva->fecha = now();
+        $reserva->precio_total = 4000;
+        $reserva->domicilio = 'D';
+        $reserva->save();
+
+
+
+        $producto = Producto :: findOrFail($idProducto);
+
+        $productoReserva = new ProductoReserva();
+        $productoReserva->nombre = $producto->nombre;
+        $productoReserva->idProducto = $producto->id;
+        $productoReserva->descripcion = $producto->descripcion;
+        $productoReserva->precio = $producto->precio;
+        $productoReserva->foto = $producto->foto;
+
+
+
+      //  $cantidad = request()->except(['_token','_method']);
+        $productoReserva->cantidad = 55;
+        $productoReserva->categoria = "cc";
+        $productoReserva->unidadmedida = "sds";
+
+        $productoReserva->save();
+
+
+       
+        $detalleReserva = new DetalleReserva();
+        $detalleReserva->reserva_id = $reserva->id;
+        $detalleReserva->productoreserva_id = $productoReserva->id;
+        $detalleReserva->save();
+        
+
+        return view ("/productoDetalle/.$producto->id)}}");
 
     }
 

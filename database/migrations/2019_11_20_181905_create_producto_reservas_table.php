@@ -15,6 +15,7 @@ class CreateProductoReservasTable extends Migration
     {
         Schema::create('producto_reservas', function (Blueprint $table) {
             $table->increments('id');
+            //Pensar para que lo guarde
             $table->integer('idProducto');
 
             $table->string('nombre', 25);
@@ -24,7 +25,10 @@ class CreateProductoReservasTable extends Migration
             $table->string('foto');
 
             $table->string('categoria');            
-            $table->string('unidadmedida');       
+            $table->string('unidadmedida');      
+            
+            $table->unsignedInteger('reserva_id');
+            $table->foreign('reserva_id')->references('id')->on('reservas');
 
 
 
