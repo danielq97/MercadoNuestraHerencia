@@ -3,6 +3,7 @@
 @section('title', 'Pedidos disponibles')
 
 @section('content')
+
 <section class="ftco-section ftco-cart">
     <div class="container">
         <div class="row">
@@ -11,56 +12,33 @@
                 <table class="table">
                     <thead class="thead-primary">
                       <tr class="text-center">
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                        <th>Identificador</th>
                         <th>Dirección</th>
                         <th>Teléfono</th>
                         <th>Fecha</th>
+                        <th>Precio total</th>
+                        <th>¿Domicilio?</th>
+                        <th>Estado</th>
+                        <th>Usuario</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="text-center">
-                        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-                        
-                        <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
-                        
-                        <td class="product-name">
-                            <h3>Bell Pepper</h3>
-                            <p>Far far away, behind the word mountains, far from the countries</p>
-                        </td>
-                        
-                        <td class="price">$4.90</td>
-                        
-                        <td class="quantity">
-                            <div class="input-group mb-3">
-                             <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                          </div>
-                      </td>
-                        
-                        <td class="total">$4.90</td>
-                      </tr><!-- END TR-->
+                      <tr>
 
+                      @foreach ($reservas as $reserva)
                       <tr class="text-center">
-                        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-                        
-                        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
-                        
-                        <td class="product-name">
-                            <h3>Bell Pepper</h3>
-                            <p>Far far away, behind the word mountains, far from the countries</p>
+                          <td class="addres">{{ $reserva->direccion }}</td>
+                          <td class="phone">{{ $reserva->telefono }}</td>
+                          <td class="date">{{ $reserva->fecha }}</td>
+                          <td class="totalprice">{{ $reserva->precio_total }}</td>
+                          <td class="domicilio">{{ $reserva->domicilio }}</td>
+                          <td class="status">{{ $reserva->estado }}</td>
+                          <td class="user">{{ $reserva->usuario_id }}</td>
+                          <td class="action"><a href="{{ url('/detallereserva/'.$reserva->id) }}">Ver productos</a></td>
                         </td>
-                        
-                        <td class="price">$15.70</td>
-                        
-                        <td class="quantity">
-                            <div class="input-group mb-3">
-                             <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                          </div>
-                      </td>
-                        
-                        <td class="total">$15.70</td>
-                      </tr><!-- END TR-->
+                      </tr>
+                      @endforeach
+
                     </tbody>
                   </table>
               </div>

@@ -26,6 +26,7 @@
         <link href="{{ asset('css/flaticon.css') }}" rel="stylesheet">
         <link href="{{ asset('css/icomoon.css') }}" rel="stylesheet">
         
+        
 
 
           <script src="https://kit.fontawesome.com/623353ff82.js" crossorigin="anonymous"></script>
