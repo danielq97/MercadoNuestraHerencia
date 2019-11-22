@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DetalleReserva;
 use App\Reserva;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,9 @@ class PedidosDisponiblesController extends Controller
         echo 'store';
      }
      public function show($id) {
-        echo 'show';
+        //$detallePedido = DetalleReserva::findOrFail($id);
+
+        return view ('/adminViews/detallepedido');
      }
      public function edit($id) {
         echo 'edit';

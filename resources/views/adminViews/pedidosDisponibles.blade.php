@@ -34,7 +34,7 @@
                           <td class="domicilio">{{ $reserva->domicilio }}</td>
                           <td class="status">{{ $reserva->estado }}</td>
                           <td class="user">{{ $reserva->usuario_id }}</td>
-                          <td class="action"><a href="#">Ver productos</a></td>
+                          <td class="action"><a href="{{ url('/detallereserva/'.$reserva->id) }}">Ver productos</a></td>
                         </td>
                       </tr>
                       @endforeach
