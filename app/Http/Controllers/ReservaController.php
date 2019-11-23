@@ -68,7 +68,7 @@ class ReservaController extends Controller
            
             $productoReserva->idProducto = $producto->id;        
             $productoReserva->precio = $producto->precio;        
-            $productoReserva->cantidad = $cantidadProd;
+            $productoReserva->cantidadReserva = $cantidadProd;
             $productoReserva->reserva_id = $reserva->id;
             $productoReserva->save();
     
@@ -104,7 +104,7 @@ class ReservaController extends Controller
            
             $productoReserva->idProducto = $producto->id;        
             $productoReserva->precio = $producto->precio;        
-            $productoReserva->cantidad = $cantidadProd;
+            $productoReserva->cantidadReserva = $cantidadProd;
             $productoReserva->reserva_id = $reserva->id;
             $productoReserva->save();
     
