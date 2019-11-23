@@ -68,6 +68,7 @@
   </div>
   </div>
   </div>
+  <h3 align="center"><a href="/productos"> Ver más productos</a>  </h3>
   
   <br><br>
   <div class="eje">

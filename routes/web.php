@@ -25,7 +25,7 @@ Route::get('boletinprecios', function () {
     return view('boletines/boletinprecios');
 });
 
-Route::get('/cart', 'DetalleReservaController@index');
+Route::get('/cart', 'ReservaController@index');
 
 //Route::put('user/{id}', 'ProductoContr@update');
 
@@ -34,7 +34,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'ReservaController@index');
+Route::get('/', 'HomeController@show');
 
 Route::get('/productoDetalle/{producto}','ProductoDetailController@index');
 
