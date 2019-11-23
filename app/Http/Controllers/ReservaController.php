@@ -46,39 +46,40 @@ class ReservaController extends Controller
 
         
 
-      // $cantidad = request()->except(['_token','_method']);
-     
-
-        //$productoReserva->save();
-
-        $producto = Producto :: findOrFail($idProducto);
+        $user = Auth::user();
+        if ($user->reservaActiva=='N' ) {
+            $producto = Producto :: findOrFail($idProducto);
         
-        $reserva = new Reserva();
-        $reserva->usuario_id = Auth::user()->id;
-        $reserva->fecha = now();
+            $reserva = new Reserva();
+            $reserva->usuario_id = Auth::user()->id;
+            $reserva->fecha = now();
+    
+           // $respuesta = request()->except(['_token','_method']);
+            $cantidadProd = $request->get('cantidad');
+    
+            $reserva->precio_total = (($producto->precio)*($cantidadProd));
+            $reserva->domicilio = 'D';
+            $reserva->save();
+    
+    
+            
+    
+            $productoReserva = new ProductoReserva();
+           
+            $productoReserva->idProducto = $producto->id;        
+            $productoReserva->precio = $producto->precio;        
+            $productoReserva->cantidad = $cantidadProd;
+            $productoReserva->reserva_id = $reserva->id;
+            $productoReserva->save();
+    
+            $user->reservaActiva = 'S';
+            $user->save();
+          
+    
+           return view ("about");
+        } 
 
-       // $respuesta = request()->except(['_token','_method']);
-        $cantidadProd = $request->get('cantidad');
-
-        $reserva->precio_total = (($producto->precio)*($cantidadProd));
-        $reserva->domicilio = 'D';
-        $reserva->save();
-
-
-        
-
-        $productoReserva = new ProductoReserva();
        
-        $productoReserva->idProducto = $producto->id;        
-        $productoReserva->precio = $producto->precio;        
-        $productoReserva->cantidad = $cantidadProd;
-        $productoReserva->reserva_id = $reserva->id;
-        $productoReserva->save();
-
-
-      
-
-       return view ("about");
        
 
     }
