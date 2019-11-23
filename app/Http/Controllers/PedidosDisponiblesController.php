@@ -22,7 +22,7 @@ class PedidosDisponiblesController extends Controller
      public function show($id) {
         $detallePedidos = Reserva::find($id)->producto_reservas;    
         $detallePedidos = ProductoReserva::
-    join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->get();
+    join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $id)->get();
    // return response()->json($detallePedidos);      
        return view ('/adminViews/detallepedido',compact('detallePedidos'));
      }

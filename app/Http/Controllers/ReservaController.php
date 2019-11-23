@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\DetalleReserva;
+
 use App\Producto;
 use App\ProductoReserva;
 use App\Reserva;
@@ -18,9 +18,31 @@ class ReservaController extends Controller
      */
     public function index()
     {
-        $datosProducto['productos'] = Producto::paginate(3);
-        return view('carrito/pedido',$datosProducto);
+        //Se obtiene el usuario logueado
+        $user = Auth::user();
+        //Se comprueba que tenga al menos reserva activa
+        if($user->reservaActiva_id != null){
+            $detallePedidos = Reserva::find($user->reservaActiva_id)->producto_reservas;   
+            $detallePedidos = ProductoReserva :: join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $user->reservaActiva_id)->get();     
+            //$reserva = Reserva :: find($user->reservaActiva_id);
+             return view('carrito/pedido',compact('detallePedidos'));
+            
     }
+    //Si no tiene reserva activa se da un aviso
+    else if(null){
+
+    }
+    
+    }
+    //Paso a formulario de datos desde el carro
+    public function goDatos(){
+        //Se obtiene el usuario logueado
+        $user = Auth::user();
+        $reserva = Reserva :: findOrFail($user->reservaActiva_id);
+
+        return view ('/carrito/formularioDatos',compact('reserva'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -142,6 +164,7 @@ class ReservaController extends Controller
     }
 
     /**
+     * Este método usarlo para finalizar pedidos
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -150,7 +173,7 @@ class ReservaController extends Controller
      */
     public function update(Request $request, Reserva $reserva)
     {
-        return view ('/carrito/formularioDatos');
+        
     }
 
     /**

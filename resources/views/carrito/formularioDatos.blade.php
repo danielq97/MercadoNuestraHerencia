@@ -10,44 +10,21 @@
                       <form action="#" class="billing-form">
                           <h3 class="mb-4 billing-heading">Detalles de facturación</h3>
                 <div class="row align-items-end">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                   <div class="form-group">
-                      <label for="firstname">Nombres</label>
+                      <label for="firstname">Nombre completo</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                      <label for="lastname">Apellidos</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-              </div>
+                </div>               
               <div class="w-100"></div>
                   <div class="w-100"></div>
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                       <div class="form-group">
                       <label for="streetaddress">Dirección</label>
                     <input type="text" class="form-control" placeholder="Dirección de residencia">
                   </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Apartamento, unidad residencial, etc: (opcional)">
-                  </div>
-                  </div>
-                  <div class="w-100"></div>
-                  <div class="col-md-6">
-                      <div class="form-group">
-                      <label for="towncity">Barrio (de la ciudad de Palmira)</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="form-group">
-                          <label for="postcodezip">Postcode / ZIP *</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  </div>
+                  </div>                 
+                  <div class="w-100"></div>                                 
                   <div class="w-100"></div>
                   <div class="col-md-6">
                   <div class="form-group">
@@ -65,8 +42,8 @@
               <div class="col-md-12">
                   <div class="form-group mt-4">
                                       <div class="radio">
-                                        <label class="mr-3"><input type="radio" name="optradio"> Paso a recoger el producto </label>
-                                        <label><input type="radio" name="optradio"> Pagar al recibir el producto</label>
+                                        <label class="mr-3"><input id="domicilio" value='T' type="radio" name="optradio"> Paso a recoger el producto </label>
+                                        <label><input id="domicilio" value="D" type="radio" name="optradio"> Pagar al recibir el producto</label>
                                       </div>
                                   </div>
               </div>
@@ -80,7 +57,7 @@
                         <h3 class="billing-heading mb-4">Total</h3>
                         <p class="d-flex">
                                   <span>Subtotal</span>
-                                  <span>$20.60</span>
+                                  <span>$ {{$reserva->precio_total}}</span>
                               </p>
                               <p class="d-flex">
                                   <span>Domicilio</span>
@@ -89,7 +66,7 @@
                               <hr>
                               <p class="d-flex total-price">
                                   <span>Total</span>
-                                  <span>$17.60</span>
+                                  <span>$ {{$reserva->precio_total}}</span>
                               </p>
                               </div>
                 </div>

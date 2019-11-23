@@ -16,7 +16,7 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-                                @foreach($productos as $producto)
+                                @foreach($detallePedidos as $producto)
 						      <tr class="text-center">
 						        <td class="product-remove"></td>
 						        
@@ -31,7 +31,7 @@
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input width="100" type="number" name="quantity" class="quantity form-control input-number" value="1" min="1" max="{{$producto->cantidad}}">
+					             	<input width="100" type="number" name="quantity" class="quantity form-control input-number" value="{{$producto->cantidadReserva}}" min="1" max="{{$producto->cantidad}}">
 					          	</div>
 					          </td>
 						        
