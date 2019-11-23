@@ -26,7 +26,6 @@ img {
 
 <div class="container">
 
-<h2 class="mt-4 ml-4">Listado de productos publicados</h2>
 <div class="row">
 
     <!--col-12  sm-6  xl-4-->
@@ -50,6 +49,10 @@ img {
     
     @endforeach
 </div>
+<br>
+<br>
+<br>
+{{ $productos->links() }}
 
 
 </div>

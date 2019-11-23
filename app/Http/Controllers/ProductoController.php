@@ -81,8 +81,7 @@ class ProductoController extends Controller
     {
          
 
-        $productos = DB::table('productos')->paginate(15);
-
+        $productos = DB::table('productos')->paginate(12);
 
         //$datosProducto['productos'] = Producto::paginate(5);
          return view('productos/show', ['productos' => $productos]);

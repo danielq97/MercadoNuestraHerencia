@@ -18,9 +18,8 @@ class ReservaController extends Controller
      */
     public function index()
     {
-        //
-        $datosProducto['productos'] = Producto::paginate(3 );
-        return view('welcome',$datosProducto);
+        $datosProducto['productos'] = Producto::paginate(3);
+        return view('carrito/pedido',$datosProducto);
     }
 
     /**
