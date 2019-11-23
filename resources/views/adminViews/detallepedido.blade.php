@@ -22,14 +22,18 @@
     </thead>
     <tbody>
 
+        @foreach ($detallePedidos as $detallePedido)
+            <tr>
+            <td></td>
+            <td>Manzana</td>
+            <td>{{ $detallePedido->cantidad }}</td>
+            <td>Kilo</td>
+            <td>{{ $detallePedido->precio }}</td>
+            </tr>
+        @endforeach
 
-      <tr>
-        <td></td>
-        <td>Manzana</td>
-        <td>12</td>
-        <td>Kilo</td>
-        <td>10000</td>
-      </tr>
+
+      
     </tbody>
     <tfoot>
             <tr>
