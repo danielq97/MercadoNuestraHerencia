@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Producto;
+use App\ProductoReserva;
 use App\Reserva;
 use Illuminate\Http\Request;
 
@@ -19,8 +20,11 @@ class PedidosDisponiblesController extends Controller
         echo 'store';
      }
      public function show($id) {
-        $detallePedidos = Reserva::find($id)->producto_reservas;
-        return view ('/adminViews/detallepedido',$detallePedidos);
+        $detallePedidos = Reserva::find($id)->producto_reservas;    
+        $detallePedidos = ProductoReserva::
+    join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->get();
+   // return response()->json($detallePedidos);      
+       return view ('/adminViews/detallepedido',compact('detallePedidos'));
      }
      public function edit($id) {
         echo 'edit';
