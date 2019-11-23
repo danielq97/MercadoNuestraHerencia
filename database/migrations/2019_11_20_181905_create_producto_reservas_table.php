@@ -18,14 +18,10 @@ class CreateProductoReservasTable extends Migration
             //Pensar para que lo guarde
             $table->integer('idProducto');
 
-            $table->string('nombre', 25);
-            $table->string('descripcion', 200);
+           
             $table->integer('precio');
             $table->integer('cantidad');
-            $table->string('foto');
-
-            $table->string('categoria');            
-            $table->string('unidadmedida');      
+           
             
             $table->unsignedInteger('reserva_id');
             $table->foreign('reserva_id')->references('id')->on('reservas');

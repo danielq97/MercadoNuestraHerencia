@@ -14,6 +14,7 @@ class Reserva extends Model
         'telefono' => "n",
         'direccion' => "n",          
         'estado' => "I",
+        'domicilio' => "D",
     ];
 
     //Método para obtener todos los detalles de una reserva

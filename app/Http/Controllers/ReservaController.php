@@ -47,43 +47,40 @@ class ReservaController extends Controller
 
         
 
+      // $cantidad = request()->except(['_token','_method']);
+     
 
+        //$productoReserva->save();
+
+        $producto = Producto :: findOrFail($idProducto);
+        
         $reserva = new Reserva();
         $reserva->usuario_id = Auth::user()->id;
         $reserva->fecha = now();
-        $reserva->precio_total = 4000;
+
+       // $respuesta = request()->except(['_token','_method']);
+        $cantidadProd = $request->get('cantidad');
+
+        $reserva->precio_total = (($producto->precio)*($cantidadProd));
         $reserva->domicilio = 'D';
         $reserva->save();
 
 
-
-        $producto = Producto :: findOrFail($idProducto);
+        
 
         $productoReserva = new ProductoReserva();
-        $productoReserva->nombre = $producto->nombre;
-        $productoReserva->idProducto = $producto->id;
-        $productoReserva->descripcion = $producto->descripcion;
-        $productoReserva->precio = $producto->precio;
-        $productoReserva->foto = $producto->foto;
-
-
-
-      //  $cantidad = request()->except(['_token','_method']);
-        $productoReserva->cantidad = 55;
-        $productoReserva->categoria = "cc";
-        $productoReserva->unidadmedida = "sds";
-
+       
+        $productoReserva->idProducto = $producto->id;        
+        $productoReserva->precio = $producto->precio;        
+        $productoReserva->cantidad = $cantidadProd;
+        $productoReserva->reserva_id = $reserva->id;
         $productoReserva->save();
 
 
-       
-        $detalleReserva = new DetalleReserva();
-        $detalleReserva->reserva_id = $reserva->id;
-        $detalleReserva->productoreserva_id = $productoReserva->id;
-        $detalleReserva->save();
-        
+      
 
-        return view ("/productoDetalle/.$producto->id)}}");
+       return view ("about");
+       
 
     }
 
