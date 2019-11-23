@@ -47,6 +47,9 @@ Route::post('/reserva/{id}','ReservaController@store' );
 
 Route::get('/datosContacto','ReservaController@goDatos');
 
+//ruta para crear los datos de contacto en la reserva
+Route::post('/datosContactoSave','ReservaController@saveDatos');
+
 Route::get('/mispedidos','PedidosUserController@index');
 
 Route::get('/detallereserva/{id}','PedidosDisponiblesController@show');

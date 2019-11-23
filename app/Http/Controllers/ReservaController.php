@@ -41,6 +41,20 @@ class ReservaController extends Controller
     }
 
 
+    public function saveDatos(Request $request)
+    {
+        //Se obtiene el usuario logueado
+        $user = Auth::user();
+        $reserva = Reserva::findOrFail($user->reservaActiva_id);
+        //actualizo por los valores recibidos
+        $reserva -> direccion = $request -> get('direccion');
+        $reserva -> telefono = $request -> get('telefono');
+        $reserva -> save();
+
+        return view('/about');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
