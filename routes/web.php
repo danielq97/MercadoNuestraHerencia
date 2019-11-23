@@ -34,7 +34,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'HomeController@show');
+Route::get('/', 'ReservaController@showHome');
 
 Route::get('/productoDetalle/{producto}','ProductoDetailController@index');
 

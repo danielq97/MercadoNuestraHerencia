@@ -21,26 +21,23 @@ class ReservaController extends Controller
         //Se obtiene el usuario logueado
         $user = Auth::user();
         //Se comprueba que tenga al menos reserva activa
-        if($user->reservaActiva_id != null){
-            $detallePedidos = Reserva::find($user->reservaActiva_id)->producto_reservas;   
-            $detallePedidos = ProductoReserva :: join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $user->reservaActiva_id)->get();     
+        if ($user->reservaActiva_id != null) {
+            $detallePedidos = Reserva::find($user->reservaActiva_id)->producto_reservas;
+            $detallePedidos = ProductoReserva::join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $user->reservaActiva_id)->get();
             //$reserva = Reserva :: find($user->reservaActiva_id);
-             return view('carrito/pedido',compact('detallePedidos'));
-            
-    }
-    //Si no tiene reserva activa se da un aviso
-    else if(null){
-
-    }
-    
+            return view('carrito/pedido', compact('detallePedidos'));
+        }
+        //Si no tiene reserva activa se da un aviso
+        else if (null) { }
     }
     //Paso a formulario de datos desde el carro
-    public function goDatos(){
+    public function goDatos()
+    {
         //Se obtiene el usuario logueado
         $user = Auth::user();
-        $reserva = Reserva :: findOrFail($user->reservaActiva_id);
+        $reserva = Reserva::findOrFail($user->reservaActiva_id);
 
-        return view ('/carrito/formularioDatos',compact('reserva'));
+        return view('/carrito/formularioDatos', compact('reserva'));
     }
 
 
@@ -62,83 +59,80 @@ class ReservaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($idProducto,Request $request)
+    public function store($idProducto, Request $request)
     {
         //
 
-        
+
         //Se obtiene el usuario logueado
         $user = Auth::user();
         //En caso de que no tenga reserva activa
-        if ($user->reservaActiva_id==null ) {
-            $producto = Producto :: findOrFail($idProducto);
-        
+        if ($user->reservaActiva_id == null) {
+            $producto = Producto::findOrFail($idProducto);
+
             $reserva = new Reserva();
             $reserva->usuario_id = Auth::user()->id;
             $reserva->fecha = now();
-    
-           // $respuesta = request()->except(['_token','_method']);
+
+            // $respuesta = request()->except(['_token','_method']);
             $cantidadProd = $request->get('cantidad');
-    
-            $reserva->precio_total = (($producto->precio)*($cantidadProd));            
+
+            $reserva->precio_total = (($producto->precio) * ($cantidadProd));
             $reserva->save();
-    
-    
-            
-    
+
+
+
+
             $productoReserva = new ProductoReserva();
-           
-            $productoReserva->idProducto = $producto->id;        
-            $productoReserva->precio = $producto->precio;        
+
+            $productoReserva->idProducto = $producto->id;
+            $productoReserva->precio = $producto->precio;
             $productoReserva->cantidadReserva = $cantidadProd;
             $productoReserva->reserva_id = $reserva->id;
             $productoReserva->save();
-    
-            
+
+
             $user->reservaActiva_id = $reserva->id;
             $user->save();
-          
-    
-           return view ("about");
-        } 
-        //En caso de que tenga reserva activa
-        else if($user->reservaActiva_id != null){
 
-            $producto = Producto :: findOrFail($idProducto);
-        
-            $reserva = Reserva :: findOrFail($user->reservaActiva_id);
+
+            return view("about");
+        }
+        //En caso de que tenga reserva activa
+        else if ($user->reservaActiva_id != null) {
+
+            $producto = Producto::findOrFail($idProducto);
+
+            $reserva = Reserva::findOrFail($user->reservaActiva_id);
             //$reserva->usuario_id = Auth::user()->id;
             //$reserva->fecha = now();
-    
-           // $respuesta = request()->except(['_token','_method']);
+
+            // $respuesta = request()->except(['_token','_method']);
             $cantidadProd = $request->get('cantidad');
-            
+
             //Recupero el precio total anterior que tenía la reserva
 
-            $precioAnterior = $reserva->precio_total;            
-            $reserva->precio_total = $precioAnterior+(($producto->precio)*($cantidadProd));           
+            $precioAnterior = $reserva->precio_total;
+            $reserva->precio_total = $precioAnterior + (($producto->precio) * ($cantidadProd));
             $reserva->save();
-    
-    
-            
-    
+
+
+
+
             $productoReserva = new ProductoReserva();
-           
-            $productoReserva->idProducto = $producto->id;        
-            $productoReserva->precio = $producto->precio;        
+
+            $productoReserva->idProducto = $producto->id;
+            $productoReserva->precio = $producto->precio;
             $productoReserva->cantidadReserva = $cantidadProd;
             $productoReserva->reserva_id = $reserva->id;
             $productoReserva->save();
-    
-           
-            $user->save();
-          
-    
-           return view ("about");
-        }
-       
-       
 
+
+            $user->save();
+
+
+            return view("about");
+        }
     }
 
     /**
@@ -172,9 +166,7 @@ class ReservaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Reserva $reserva)
-    {
-        
-    }
+    { }
 
     /**
      * Remove the specified resource from storage.
@@ -185,5 +177,10 @@ class ReservaController extends Controller
     public function destroy(Reserva $reserva)
     {
         //
+    }
+
+    public function showHome(){
+        $datosProducto['productos'] = Producto::paginate(3 );
+        return view('welcome',$datosProducto);
     }
 }

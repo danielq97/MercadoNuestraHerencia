@@ -27,9 +27,5 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function show() {
-        $datosProducto['productos'] = Producto::paginate(3 );
-        return view('welcome',$datosProducto);
-     }
 
 }
