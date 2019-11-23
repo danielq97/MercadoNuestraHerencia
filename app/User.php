@@ -14,6 +14,7 @@ class User extends Authenticatable
     //Rol por defecto al crear un user
     protected $attributes = [
         'rol_id' => 1,
+        'reservaActiva' => 'N',
     ];
 
     /**

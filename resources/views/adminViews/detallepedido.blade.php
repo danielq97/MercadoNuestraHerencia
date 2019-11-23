@@ -26,9 +26,9 @@
             <tr>
             <td></td>
             <td>Manzana</td>
-            <td>{{ $detallePedido->cantidad }}</td>
+            <td>{{$detallePedido->cantidad}}</td>
             <td>Kilo</td>
-            <td>{{ $detallePedido->precio }}</td>
+            <td>{{$detallePedido->precio}}</td>
             </tr>
         @endforeach
 

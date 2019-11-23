@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ProductoReserva;
+
 use App\Reserva;
 use Illuminate\Http\Request;
 
@@ -19,7 +19,7 @@ class PedidosDisponiblesController extends Controller
         echo 'store';
      }
      public function show($id) {
-        $detallePedidos = Reserva::find($id)->getProductos;
+        $detallePedidos = Reserva::find($id)->producto_reservas;
         return view ('/adminViews/detallepedido',$detallePedidos);
      }
      public function edit($id) {
