@@ -26,7 +26,7 @@
             <tr>
             <td></td>
             <td>{{$detallePedido->nombre}}</td>
-            <td>{{$detallePedido->cantidad}}</td>
+            <td>{{$detallePedido->cantidadReserva}}</td>
             <td>Kilo</td>
             <td>$ {{$detallePedido->precio}}</td>
             </tr>

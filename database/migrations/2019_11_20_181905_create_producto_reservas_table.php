@@ -20,11 +20,12 @@ class CreateProductoReservasTable extends Migration
 
            
             $table->integer('precio');
-            $table->integer('cantidad');
+            $table->integer('cantidadReserva');
            
             
             $table->unsignedInteger('reserva_id');
-            $table->foreign('reserva_id')->references('id')->on('reservas');
+            $table->foreign('reserva_id')->references('id')->on('reservas')
+            ->onDelete('cascade');
 
 
 

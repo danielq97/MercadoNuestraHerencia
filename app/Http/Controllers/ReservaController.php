@@ -45,9 +45,10 @@ class ReservaController extends Controller
         //
 
         
-
+        //Se obtiene el usuario logueado
         $user = Auth::user();
-        if ($user->reservaActiva=='N' ) {
+        //En caso de que no tenga reserva activa
+        if ($user->reservaActiva_id==null ) {
             $producto = Producto :: findOrFail($idProducto);
         
             $reserva = new Reserva();
@@ -57,8 +58,7 @@ class ReservaController extends Controller
            // $respuesta = request()->except(['_token','_method']);
             $cantidadProd = $request->get('cantidad');
     
-            $reserva->precio_total = (($producto->precio)*($cantidadProd));
-            $reserva->domicilio = 'D';
+            $reserva->precio_total = (($producto->precio)*($cantidadProd));            
             $reserva->save();
     
     
@@ -72,13 +72,48 @@ class ReservaController extends Controller
             $productoReserva->reserva_id = $reserva->id;
             $productoReserva->save();
     
-            $user->reservaActiva = 'S';
+            
+            $user->reservaActiva_id = $reserva->id;
             $user->save();
           
     
            return view ("about");
         } 
+        //En caso de que tenga reserva activa
+        else if($user->reservaActiva_id != null){
 
+            $producto = Producto :: findOrFail($idProducto);
+        
+            $reserva = Reserva :: findOrFail($user->reservaActiva_id);
+            //$reserva->usuario_id = Auth::user()->id;
+            //$reserva->fecha = now();
+    
+           // $respuesta = request()->except(['_token','_method']);
+            $cantidadProd = $request->get('cantidad');
+            
+            //Recupero el precio total anterior que tenía la reserva
+
+            $precioAnterior = $reserva->precio_total;            
+            $reserva->precio_total = $precioAnterior+(($producto->precio)*($cantidadProd));           
+            $reserva->save();
+    
+    
+            
+    
+            $productoReserva = new ProductoReserva();
+           
+            $productoReserva->idProducto = $producto->id;        
+            $productoReserva->precio = $producto->precio;        
+            $productoReserva->cantidad = $cantidadProd;
+            $productoReserva->reserva_id = $reserva->id;
+            $productoReserva->save();
+    
+           
+            $user->save();
+          
+    
+           return view ("about");
+        }
        
        
 
