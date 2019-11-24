@@ -41,7 +41,7 @@ class ProductoController extends Controller
         if (Auth::user()->rol_id==2 ) {
             return view('productos/create',compact("data"));
         } else {
-            return view('/');
+            return redirect('/');
         }
     }
 
