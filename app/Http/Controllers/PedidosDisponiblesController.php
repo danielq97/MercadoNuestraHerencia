@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Producto;
 use App\ProductoReserva;
 use App\Reserva;
 use Illuminate\Http\Request;
