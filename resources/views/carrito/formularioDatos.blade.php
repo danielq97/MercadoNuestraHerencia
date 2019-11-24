@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xl-7 ftco-animate">
-        <form  method="post" action="{{url('/datosContactoSave')}}" class="billing-form">
+        <form method="post" action="{{url('/datosContactoSave')}}" class="billing-form">
           @csrf
           <h3 class="mb-4 billing-heading">Detalles de facturación</h3>
           <div class="row align-items-end">
@@ -22,7 +22,8 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label for="streetaddress">Dirección</label>
-                <input id="direccion" name="direccion" type="text" class="form-control" placeholder="Dirección de residencia">
+                <input id="direccion" name="direccion" type="text" class="form-control"
+                  placeholder="Dirección de residencia">
               </div>
             </div>
             <div class="w-100"></div>
@@ -79,7 +80,7 @@
               </p>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div> <!-- .col-md-8 -->

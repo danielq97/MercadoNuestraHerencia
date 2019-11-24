@@ -9,12 +9,12 @@
 
                 <div class="card-body">
                     @if( auth()->check() )
-                        
-                            <a class="nav-link" href="#">{{ auth()->user()->name }}</a>
-                        
+
+                    <a class="nav-link" href="#">{{ auth()->user()->name }}</a>
+
                     @else
-                        <p>No estas logueado</p>
-                        
+                    <p>No estas logueado</p>
+
                     @endif
                 </div>
             </div>

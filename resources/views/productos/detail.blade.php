@@ -6,7 +6,6 @@
 
 <body>
 
-
     <form method="post" action="{{url('/reserva/'.$producto->id)}}">
         {{csrf_field()}}
 
@@ -46,8 +45,6 @@
                 </div>
             </div>
         </section>
-
-
 
         <section class="ftco-section">
             <div class="container">
