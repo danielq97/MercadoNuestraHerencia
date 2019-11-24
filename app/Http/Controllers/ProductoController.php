@@ -38,9 +38,12 @@ class ProductoController extends Controller
         $data['categorias']     =  Categoria::paginate(5);
         $data['productos']     =  Producto::all();
 
-        if (Auth::user()->rol_id==2 ) {
+        if ( is_null (Auth::user())){
+            return redirect('/');
+        }
+        else if (Auth::user()->rol_id==2 ) {
             return view('productos/create',compact("data"));
-        } else {
+        } else if (Auth::user()->rol_id==1 ) {
             return redirect('/');
         }
     }
