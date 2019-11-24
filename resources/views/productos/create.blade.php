@@ -109,7 +109,7 @@
                                 <input type="text" name="cantidad" id="cantidad" value="" class="seg2">
                                 <br>
                                 <br>
-                                <input type="submit" value="Agregar">
+                                <input type="submit" class="btn btn-success" value="Agregar">
                             </div>
                         </div>
                     </div>
@@ -122,10 +122,14 @@
                         <ul class="list-group">
 
                             @foreach($data['productos'] as $producto)
-                            <a class="list-group-item list-group-item-action">{{$producto->nombre}} <form
+                            <a class="list-group-item list-group-item-action">
+                                {{$producto->nombre}} 
+                                <p>Cantidad en bodega: {{ $producto->cantidad }}</p>
+                                <form style="center"
                                     action="{{url('/productos/'.$producto->id.'/edit')}}">
-                                    <input type="submit" value="Editar" />
-                                </form></a>
+                                    <input type="submit" class="btn btn-primary" value="Editar" />
+                                </form>
+                            </a>
                             <!-- <li class="list-group-item">{{$producto->nombre}}</li> -->
                             @endforeach
                         </ul>

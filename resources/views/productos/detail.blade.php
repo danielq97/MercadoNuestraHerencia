@@ -40,7 +40,7 @@
                                     en bodega</p>
                             </div>
                         </div>
-                        <input type="submit" value="Agregar al carrito">
+                        <input type="submit" class="btn btn-success" value="Agregar al carrito">
                     </div>
                 </div>
             </div>
