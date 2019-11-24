@@ -55,8 +55,7 @@
           <div class="col-md-12">
             <div class="cart-detail p-3 p-md-4">
             </div>
-            <p><a type="submit" class="btn btn-primary py-3 px-4">Crear pedido</a></p>
-            <input type="submit" value="Registrarse">
+            <input class="btn btn-success" type="submit" value="Crear Pedido">
           </div>
         </form><!-- END -->
       </div>
