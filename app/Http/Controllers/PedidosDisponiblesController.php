@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class PedidosDisponiblesController extends Controller
 {
+
+
+   public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
+
     public function index() {
         $reservas['reservas'] = Reserva::paginate(12);
         return view('/adminViews/pedidosDisponibles', $reservas);
