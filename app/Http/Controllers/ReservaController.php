@@ -53,10 +53,15 @@ class ReservaController extends Controller
         $user = Auth::user();
         $reserva = Reserva::findOrFail($user->reservaActiva_id);
         //actualizo por los valores recibidos
-        $reserva->direccion = $request->get('direccion');
+        $reserva->direccion = $request->get('direccion');        
         $reserva->telefono = $request->get('telefono');
+        //$domicilio = $request->get('domicilio');
+        $reserva->domicilio =$request->get('domicilio') ;
+        $reserva->estado = 'A';
+
         $reserva->save();
 
+        //return response()->json($domicilio);
         return view('/about');
     }
 

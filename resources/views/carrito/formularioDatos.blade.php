@@ -43,10 +43,10 @@
             <div class="w-100"></div>
             <div class="col-md-12">
               <div class="form-group mt-4">
-                <div class="radio">
-                  <label class="mr-3"><input id="domicilio" value='T' type="radio" name="optradio"> Paso a recoger el
+                <div class="radio" id="domicilio" >
+                  <label class="mr-3"><input id="domicilio" name="domicilio" value='T' type="radio" name="optradio"> Paso a recoger el
                     producto </label>
-                  <label><input id="domicilio" value="D" type="radio" name="optradio"> Pagar al recibir el
+                  <label><input id="domicilio" name="domicilio" value="D" type="radio" name="optradio"> Pagar al recibir el
                     producto</label>
                 </div>
               </div>
