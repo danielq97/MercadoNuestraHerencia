@@ -166,8 +166,8 @@
 
   .carousel,
   .carousel-inner>.item>img {
-    height: 500px;
-    width: 700px;
+    height: 10%;
+    width: 40%;
   }
 
   .imagen {

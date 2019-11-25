@@ -10,7 +10,7 @@
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 				<th>Producto</th>
-				<th>Precio</th>
+				<th>Precio x unidad</th>
 				<th>Cantidad</th>
 				<th>Total</th>
 			</tr>

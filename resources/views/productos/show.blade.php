@@ -39,8 +39,8 @@
                 <br>
                 <h5>{{$producto->nombre}}</h5>
                 <div class="row">
-                    <h6>${{$producto->precio}}</h6>
-                    <a class="nav-link ml-4" href="#"><i class="fas fa-shopping-cart"></i>Agregar</a>
+                    <h6 class="mr-3 ml-3">${{$producto->precio}}</h6>
+                    <a class="btn btn-info" href="{{ url('/productoDetalle/'.$producto->id) }}">Ver producto <i class="far fa-eye"></i></a>
                 </div>
 
 

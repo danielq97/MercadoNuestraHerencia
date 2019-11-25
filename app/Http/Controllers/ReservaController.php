@@ -122,7 +122,7 @@ class ReservaController extends Controller
                 $user->save();
 
 
-                return view("about");
+                return redirect("/productos");
             }
             //En caso de que tenga reserva activa
             else if ($user->reservaActiva_id != null) {
@@ -157,7 +157,7 @@ class ReservaController extends Controller
                 $user->save();
 
 
-                return view("about");
+                return redirect("/productos");
             }
         }
     }
