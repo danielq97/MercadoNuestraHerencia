@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reserva;
+use App\ProductoReserva;
 use Auth;
 
+/**
+ * Controlador encargado de todo lo relacionado con los pedidos del cliente.
+ */
 class PedidosUserController extends Controller
 {
+   /**
+    * Mostrar pedidos realizados por el usuario
+    */
     public function index() {
       $user = Auth::user();
       $reservas['reservas'] = Reserva::where('usuario_id','=',$user->id)->get();
@@ -19,8 +26,17 @@ class PedidosUserController extends Controller
      public function store(Request $request) {
         echo 'store';
      }
+
+     /**
+      * Mostrar detalle de un pedido realizado por un usuario
+      */
      public function show($id) {
-        echo 'show';
+      $detallePedidos = Reserva::find($id)->producto_reservas;    
+      $detallePedidos = ProductoReserva::
+  join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $id)->get();
+ // return response()->json($detallePedidos);      
+     return view ('/normalUserViews/midetallepedido',compact('detallePedidos'));
+        
      }
      public function edit($id) {
         echo 'edit';

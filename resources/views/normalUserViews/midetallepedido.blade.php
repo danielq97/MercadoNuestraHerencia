@@ -1,6 +1,6 @@
 @extends('layout/maintemaplate')
 
-@section('title', 'Detalle del pedido')
+@section('title', 'Detalle de mi pedido')
 
 @section('content')
 

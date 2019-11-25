@@ -29,7 +29,7 @@
                 <th>{{ $reserva->precio_total }}</th>
                 <th>{{ $reserva->domicilio }}</th>
                 <th>{{ $reserva->estado }}</th>
-                <th class="action">Ver productos</th>
+                <th class="action"><a class="btn btn-info" href="{{ url('/pedidosusuario/'.$reserva->id) }}">Ver productos</a> </th>
               </tr>
               @endforeach
 
