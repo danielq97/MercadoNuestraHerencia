@@ -59,6 +59,9 @@ class ReservaController extends Controller
         $reserva->domicilio =$request->get('domicilio') ;
         $reserva->estado = 'A';
 
+        $user->reservaActiva_id = null;
+        $user-> save();
+
         $reserva->save();
 
         //return response()->json($domicilio);
