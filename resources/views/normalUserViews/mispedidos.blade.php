@@ -23,13 +23,13 @@
             <tbody>
               @foreach ($reservas as $reserva)
               <tr class="text-center">
-                <th>{{ $reserva->direccion }}</th>
-                <th>{{ $reserva->telefono }}</th>
-                <th>{{ $reserva->fecha }}</th>
-                <th>{{ $reserva->precio_total }}</th>
-                <th>{{ $reserva->domicilio }}</th>
-                <th>{{ $reserva->estado }}</th>
-                <th class="action">Ver productos</th>
+                <td class="direccion">{{ $reserva->direccion }}</td>
+                <td class="telefono">{{ $reserva->telefono }}</td>
+                <td class="fecha">{{ $reserva->fecha }}</td>
+                <td class="precio">$ {{ $reserva->precio_total }}</td>
+                <td class="domicilio">{{ $reserva->domicilio }}</td>
+                <td class="reserva">{{ $reserva->estado }}</td>
+                <td class="action"><a class="btn btn-info" href="{{ url('/pedidosusuario/'.$reserva->id) }}">Ver productos</a> </td>
               </tr>
               @endforeach
 

@@ -23,7 +23,7 @@
               <div class="form-group">
                 <label for="streetaddress">Dirección</label>
                 <input id="direccion" name="direccion" type="text" class="form-control"
-                  placeholder="Dirección de residencia">
+                  placeholder="Dirección de residencia, barrio">
               </div>
             </div>
             <div class="w-100"></div>
@@ -31,14 +31,10 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="phone">Teléfono</label>
-                <input id="telefono" name="telefono" type="text" class="form-control" placeholder="">
+                <input id="telefono" name="telefono" type="text" class="form-control" placeholder="Teléfono">
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group">
-                <label for="emailaddress">Correo electronico</label>
-                <input type="text" class="form-control" placeholder="">
-              </div>
             </div>
             <div class="w-100"></div>
             <div class="col-md-12">

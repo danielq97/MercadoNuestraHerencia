@@ -19,16 +19,16 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100"
+        <img class="d-block w-10 h-10"
           src="https://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/04/principalrrrrrrrrrr.jpg?itok=SR28-NuI"
           alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://biotrendies.com/wp-content/uploads/2015/06/manzana.jpg"
+        <img class="d-block w-10 h-10" src="https://biotrendies.com/wp-content/uploads/2015/06/manzana.jpg"
           alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100"
+        <img class="d-block w-10 h-10"
           src="https://http2.mlstatic.com/arbol-de-guanabana-enano-p-maceta-o-tierra-ver-descripcion-D_NQ_NP_940104-MLM31228448187_062019-F.jpg"
           alt="Third slide">
       </div>
@@ -44,8 +44,9 @@
   </div>
 
 </div>
+<br>
 
-<div class="bandaProductosVendidos">
+<div class="bandaProductosVendidos col-12">
   <h1 align="center">Productos</h1>
 
   <div id="contenedor_principal">
@@ -55,15 +56,15 @@
 
       @foreach($productos as $producto)
 
-      <div class="column">
+      <div class="col-12 col-sm-6 col-lg-4">
         <div class="contenedor_imagen_texto">
-          <div class="imagen col-sm-4"><a href="{{url('/productoDetalle/'.$producto->id)}}"><img
+          <div class="imagen col-sm-4"><img
                 src="{{asset('storage').'/'.$producto->foto}}" width="150"></div>
         </div>
         <br><br>
         <div class=row>
-          <p class="ml-sm-5">{{$producto->nombre}}</p>
-          <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Agregar</a>
+          <h6 class="ml-sm-5 mr-2"> {{ $producto->nombre}} </h6>
+          <a class="btn btn-info"  href="{{ url('/productoDetalle/'.$producto->id) }}">Ver producto <i class="far fa-eye"></i></a>
         </div>
 
       </div>
@@ -74,9 +75,12 @@
     </div>
   </div>
 </div>
-<h3 align="center"><a href="/productos"> Ver más productos</a> </h3>
-
-<br><br>
+<br>
+<br>
+<h2 align="center"><a class="btn btn-success" href="/productos"> Ver más productos <i class="fas fa-seedling"></i></a> </h2>
+<br>
+<br>
+<br>
 <div class="eje">
   <h2 align="center">Sobre nosotros</h2>
 

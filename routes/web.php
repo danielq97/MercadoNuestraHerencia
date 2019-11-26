@@ -51,5 +51,6 @@ Route::get('/datosContacto','ReservaController@goDatos');
 Route::post('/datosContactoSave','ReservaController@saveDatos');
 
 Route::get('/mispedidos','PedidosUserController@index');
+Route::get('/pedidosusuario/{id}','PedidosUserController@show');
 
 Route::get('/detallereserva/{id}','PedidosDisponiblesController@show');

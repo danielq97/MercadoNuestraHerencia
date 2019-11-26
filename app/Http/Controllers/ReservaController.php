@@ -33,7 +33,9 @@ class ReservaController extends Controller
                 return view('carrito/pedido', compact('detallePedidos'));
             }
             //Si no tiene reserva activa se da un aviso
-            else if (null) { }
+            else if ($user->reservaActiva_id ==null) {
+                return redirect("/productos");
+            }
         }
     }
     //Paso a formulario de datos desde el carro
@@ -125,7 +127,7 @@ class ReservaController extends Controller
                 $user->save();
 
 
-                return view("about");
+                return redirect("/productos");
             }
             //En caso de que tenga reserva activa
             else if ($user->reservaActiva_id != null) {
@@ -160,7 +162,7 @@ class ReservaController extends Controller
                 $user->save();
 
 
-                return view("about");
+                return redirect("/productos");
             }
         }
     }
