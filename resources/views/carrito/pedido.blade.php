@@ -33,7 +33,7 @@
 
 <td class="quantity">
 	<div class="input-group mb-3">
-		<input width="100" type="number" name="quantity" class="quantity form-control input-number"
+		<input onchange="changePrice(this)" width="100" type="number" name="cantidad" id="cantidad" class="quantity form-control input-number"
 			value="{{$producto->cantidadReserva}}" min="1" max="{{$producto->cantidad}}">
 	</div>
 </td>
@@ -52,7 +52,28 @@
 
 </div>
 
+<script>
+function changePrice(element){
+    var cantidad = element.value;
+	var precioUnidad = {{$producto->precio}};
+    alert(precioUnidad);
+}
+</script>
+   $('.quantity-right-plus').click(function(e){
+		        
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		            
+		            $('#quantity').val(quantity + 1);
 
+		          
+		            // Increment
+		        
+		    });
 
 
 
