@@ -14,7 +14,7 @@
 				<th>Cantidad</th>				
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="ajuste">
 			@foreach($detallePedidos as $producto)
 			<tr class="text-center">
 				
@@ -28,13 +28,13 @@
 	<p>{{$producto->descripcion}}</p>
 </td>
 
-<td class="price" id="precioUnidad">${{$producto->precio}}</td>
+<td class="price" id="precioUnidad">{{$producto->precio}}</td>
 
 <td class="quantity">
-	<div class="input-group mb-3">
-		<input onchange="changePrice(this)"  type="number" name="cantidad" id="cantidad" class="hola"
+	
+		<input onchange="changePrice(this)"  type="number" name="cantidad" id="cantidad" class="quantity"
 			value="{{$producto->cantidadReserva}}" min="1" max="{{$producto->cantidad}}">
-	</div>
+	
 </td>
 
 
@@ -61,17 +61,33 @@
 
 <script>
 function changePrice(element){
+
+
+
+
+	  var filas = $("#ajuste").find("tr"); //devulve las filas del body de la tabla
+	  var resultado = 0;
+	for(i=0; i<filas.length; i++){ //Recorre las filas 1 a 1
+		var celdas = $(filas[i]).find("td"); //devolverá las celdas de una fila
+		
+		precioUnidad = $(celdas[2]).text();
+		cantidad=  $($(celdas[3]).children("input")[0]).val();
+		
+		
+    resultado += parseInt(precioUnidad)*parseInt(cantidad);
+	}
 	
-    var cantidad = element.value;
-	var precioUnidad =  document.getElementById('precioUnidad').innerText;
-    //alert(precioUnidad);
-
-
-	document.getElementById("precioTotal").innerHTML = 4 + cantidad;
+	
+  
+	$('#precioTotal').text(resultado);    
+	
+  
 
 	
 //	$('#precioIndividual').val(cantidad + 1);
 }
+
+
 </script>
 
 
