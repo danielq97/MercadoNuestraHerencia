@@ -28,9 +28,10 @@ class ReservaController extends Controller
             //Se comprueba que tenga al menos reserva activa
             if ($user->reservaActiva_id != null) {
                 $detallePedidos = Reserva::find($user->reservaActiva_id)->producto_reservas;
+                $reserva = Reserva::findOrFail($user->reservaActiva_id);
                 $detallePedidos = ProductoReserva::join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $user->reservaActiva_id)->get();
                 //$reserva = Reserva :: find($user->reservaActiva_id);
-                return view('carrito/pedido', compact('detallePedidos'));
+                return view('carrito/pedido', compact('detallePedidos','reserva'));
             }
             //Si no tiene reserva activa se da un aviso
             else if ($user->reservaActiva_id ==null) {

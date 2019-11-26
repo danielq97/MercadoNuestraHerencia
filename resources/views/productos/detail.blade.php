@@ -45,6 +45,7 @@
                 </div>
             </div>
         </section>
+        </form>
 
         <section class="ftco-section">
             <div class="container">
@@ -77,7 +78,7 @@
             </div>
         </section>
 
-    </form>
+    
 
 </body>
 
