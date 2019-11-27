@@ -19,7 +19,7 @@
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link href="{{ asset('css/open-iconic-bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
@@ -139,6 +139,15 @@
   </nav>
 
   @yield('content')
+
+  <div align="right" class="mr-5">
+    <address>
+      <p><i class="material-icons">pin_drop</i> Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
+      <p><i class='fas fa-mobile-alt'></i> Celular: 3183449646 - 3005103650</p>
+    </address>
+    <a href="/contact-us"><i class='far fa-envelope'></i> Contactar</a>
+
+  </div>
 
 </body>
 

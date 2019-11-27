@@ -58,13 +58,13 @@
 
       <div class="col-12 col-sm-6 col-lg-4">
         <div class="contenedor_imagen_texto">
-          <div class="imagen col-sm-4"><img
-                src="{{asset('storage').'/'.$producto->foto}}" width="150"></div>
+          <div class="imagen col-sm-4"><img src="{{asset('storage').'/'.$producto->foto}}" width="150"></div>
         </div>
         <br><br>
         <div class=row>
           <h6 class="ml-sm-5 mr-2"> {{ $producto->nombre}} </h6>
-          <a class="btn btn-info"  href="{{ url('/productoDetalle/'.$producto->id) }}">Ver producto <i class="far fa-eye"></i></a>
+          <a class="btn btn-info" href="{{ url('/productoDetalle/'.$producto->id) }}">Ver producto <i
+              class="far fa-eye"></i></a>
         </div>
 
       </div>
@@ -77,7 +77,8 @@
 </div>
 <br>
 <br>
-<h2 align="center"><a class="btn btn-success" href="/productos"> Ver más productos <i class="fas fa-seedling"></i></a> </h2>
+<h2 align="center"><a class="btn btn-success" href="/productos"> Ver más productos <i class="fas fa-seedling"></i></a>
+</h2>
 <br>
 <br>
 <br>
@@ -92,14 +93,7 @@
     medio <br> ambiente
     y con la salud del consumidor, generamos valor agregado con productos procesados por nuestra asociación.<h6>
 
-      <div align="right" class="mr-5">
-        <address>
-          <p>Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
-          <p>Celular: 3183449646 - 3005103650</p>
-        </address>
-
-
-      </div>
+    
 </div>
 
 
