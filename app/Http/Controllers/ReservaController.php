@@ -40,12 +40,13 @@ class ReservaController extends Controller
         }
     }
     //Paso a formulario de datos desde el carro
-    public function goDatos()
+    public function goDatos(Request $request)
     {
         //Se obtiene el usuario logueado
         $user = Auth::user();
         $reserva = Reserva::findOrFail($user->reservaActiva_id);
 
+       // return response()->json($request);
         return view('/carrito/formularioDatos', compact('reserva'));
     }
 

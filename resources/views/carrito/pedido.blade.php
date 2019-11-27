@@ -3,6 +3,10 @@
 @section('title', 'Pedido')
 
 @section('content')
+
+
+<form method="get" action="{{url('/datosContacto')}}" >
+{{csrf_field()}}
 <div class="cart-list">
 	<table class="table">
 		<thead class="thead-primary">
@@ -19,7 +23,7 @@
 			<tr class="text-center">
 				
 
-				<td class="image-prod"><img src="{{asset('storage').'/'.$producto->foto}}" width="150" height="150">
+				<td class="image-prod"><img src="{{asset('storage').'/'.$producto->foto}}" width="100" height="100">
 
 
 
@@ -48,17 +52,20 @@
 
 
 
-<div align="right" >
-	<h6 > Precio Total: </h6>
-	<p class="mr-4" id="precioTotal">  {{$reserva->precio_total}}</p>
+<div  class="col-12" align="right" >
+	
+	<h6 style="margin-right:200px" class="col-md-4"> Precio Total: </h6>
+	<p style="margin-right:200px" class="col-md-4" id="precio_total"> $ {{$reserva->precio_total}}</p>
+
 </div>
 
 <div align="right">
-	<p><a href="/datosContacto" class="btn btn-primary py-3 px-4 mr-4">Continuar pedido</a></p>
+<input class="btn btn-success" style="margin-right:200px" type="submit" value="Continuar pedido">
+
 
 
 </div>
-
+</form>
 <script>
 function changePrice(element){
 
@@ -79,7 +86,7 @@ function changePrice(element){
 	
 	
   
-	$('#precioTotal').text(resultado);    
+	$('#precio_total').text("$ " + resultado);    
 	
   
 
