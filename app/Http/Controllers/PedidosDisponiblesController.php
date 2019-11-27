@@ -17,7 +17,8 @@ class PedidosDisponiblesController extends Controller
 
 
     public function index() {
-        $reservas['reservas'] = Reserva::paginate(12);
+      
+        $reservas['reservas'] = Reserva::join('users','users.id','=','reservas.usuario_id')->where('estado','=',"A")->orWhere('estado','=',"C")->get();
         return view('/adminViews/pedidosDisponibles', $reservas);
      }
      public function create() {

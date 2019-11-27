@@ -30,9 +30,17 @@
                 <td class="phone">{{ $reserva->telefono }}</td>
                 <td class="date">{{ $reserva->fecha }}</td>
                 <td class="totalprice">$ {{ $reserva->precio_total }}</td>
-                <td class="domicilio">{{ $reserva->domicilio }}</td>
-                <td class="status">{{ $reserva->estado }}</td>
-                <td class="user">{{ $reserva->usuario_id }}</td>
+                @if($reserva->domicilio =='D')
+                <td class="domicilio">Domicilio</td>
+                @elseif($reserva->domicilio =='T')
+                <td class="domicilio">Recoger en tienda</td>
+                @endif
+                @if($reserva->estado =='A')
+                <td class="estado">Activo</td>
+                @elseif($reserva->estado =='C')
+                <td class="estado">Completado</td>
+                @endif
+                <td class="user">{{ $reserva->name }}</td>
                 <td class="action"><a class="btn btn-info" href="{{ url('/detallereserva/'.$reserva->id) }}">Ver productos</a></td>
                 </td>
               </tr>
