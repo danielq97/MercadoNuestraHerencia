@@ -54,3 +54,8 @@ Route::get('/mispedidos','PedidosUserController@index');
 Route::get('/pedidosusuario/{id}','PedidosUserController@show');
 
 Route::get('/detallereserva/{id}','PedidosDisponiblesController@show');
+
+
+//rutas para el formulario de contacto
+Route::get('contact-us', 'ContactUSController@contactUS');
+Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUSController@contactSaveData']);
