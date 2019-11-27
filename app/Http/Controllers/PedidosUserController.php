@@ -17,7 +17,7 @@ class PedidosUserController extends Controller
     */
     public function index() {
       $user = Auth::user();
-      $reservas['reservas'] = Reserva::where('usuario_id','=',$user->id)->get();
+      $reservas['reservas'] = Reserva::where([['usuario_id','=',$user->id],['estado','=',"A"]])->get();
         return view("/normalUserViews/mispedidos",$reservas);
      }
      public function create() {
