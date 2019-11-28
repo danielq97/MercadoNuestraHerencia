@@ -41,7 +41,18 @@
                 <td class="estado">Completado</td>
                 @endif
                 <td class="user">{{ $reserva->name }}</td>
-                <td class="action"><a class="btn btn-info" href="{{ url('/detallereserva/'.$reserva->id) }}">Ver productos</a></td>
+                <td class="action">
+                  <a class="btn btn-info" href="{{ url('/detallereserva/'.$reserva->id) }}">Ver productos</a>
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones de pedido
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Completado</a>
+                        <a class="dropdown-item" href="#">Cancelado</a>
+                      </div>
+                    </div>
+                </td>
                 </td>
               </tr>
               @endforeach
@@ -51,5 +62,6 @@
         </div>
       </div>
     </div>
+    {{$reservas->links()}}
 </section>
 @endsection

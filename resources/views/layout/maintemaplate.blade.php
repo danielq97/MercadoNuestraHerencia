@@ -257,7 +257,7 @@
         <p>
           <i class="fas fa-home mr-3"></i> Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
         <p>
-          <i class="fas fa-envelope mr-3"></i> </p>
+          <i class="fas fa-envelope mr-3"></i> <a href="/contact-us">Contactar</a> </p>
         <p>
           <i class="fas fa-phone mr-3"></i> 3183449646</p>
         <p>

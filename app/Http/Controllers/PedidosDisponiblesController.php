@@ -18,7 +18,7 @@ class PedidosDisponiblesController extends Controller
 
     public function index() {
       
-        $reservas['reservas'] = Reserva::join('users','users.id','=','reservas.usuario_id')->where('estado','=',"A")->orWhere('estado','=',"C")->get();
+        $reservas['reservas'] = Reserva::join('users','users.id','=','reservas.usuario_id')->where('estado','=',"A")->orWhere('estado','=',"C")->paginate(12);
         return view('/adminViews/pedidosDisponibles', $reservas);
      }
      public function create() {
@@ -37,8 +37,18 @@ class PedidosDisponiblesController extends Controller
      public function edit($id) {
         echo 'edit';
      }
+
+     //actualizar estado del pedido 1.Completado
      public function update(Request $request, $id) {
-        echo 'update';
+      $detallePedidos = Reserva::find($id)->producto_reservas;
+      if($id==1){
+         $detallePedidos->estado = $request->get()
+         return redirect("/pedidosDisponibles")
+      }
+      
+
+
+
      }
      public function destroy($id) {
         echo 'destroy';
