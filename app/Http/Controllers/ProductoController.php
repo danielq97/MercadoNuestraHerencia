@@ -57,9 +57,9 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $data =  array();
-        $data['unidadesmedidas']  =  Unidad_Medida::paginate(5);
-        $data['categorias']     =  Categoria::paginate(5);
-        $data['productos']     =  Producto::all();
+        $data['unidadesmedidas']  =  Unidad_Medida::all();
+        $data['categorias']     =  Categoria::all();
+       
 
         //
         $datosProducto =  request()->all();
@@ -71,6 +71,7 @@ class ProductoController extends Controller
 
         Producto::insert($datosProducto);
 
+        $data['productos']     =  Producto::all();
         return view('productos/create',compact("data"));
     }
 
