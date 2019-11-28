@@ -17,12 +17,17 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $datosProductos['productos'] = Producto::paginate(12);
+        $nombre = $request->get('nombre');
+       
+        $productos = Producto::orderBy('id','DESC')
         
-        return view('productos/show',$datosProductos);
+        ->nombre($nombre)
+        ->paginate(12);
+        
+        return view('productos/show', ['productos' => $productos]);
     }
 
     /**
@@ -81,11 +86,18 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show(Request $request)
     {
          
 
-        $productos = DB::table('productos')->paginate(12);
+        $nombre = $request->get('nombre');
+       
+        $productos = Producto::orderBy('id','DESC')
+        
+        ->nombre($nombre)
+        ->paginate(12);
+
+        //$productos = DB::table('productos')->paginate(12);
 
         //$datosProducto['productos'] = Producto::paginate(5);
          return view('productos/show', ['productos' => $productos]);
@@ -94,6 +106,21 @@ class ProductoController extends Controller
         //
        
     }
+    //Método para buscar productos relacionados
+    public function showBusqueda(Request $request)
+    {
+         
+
+        //$productos = DB::table('productos')->paginate(12);
+
+        //$datosProducto['productos'] = Producto::paginate(5);
+        // return view('productos/show', ['productos' => $productos]);
+         
+      
+        return response()->json($request);
+       
+    }
+
 
     /**
      * Show the form for editing the specified resource.

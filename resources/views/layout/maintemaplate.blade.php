@@ -111,8 +111,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <div class="navbar-header col-md-6">
-        <form class="form-inline">
-          <input class="form-control col-md-6 mr-sm-2" type="search" placeholder="Buscar producto" aria-label="Search">
+        <form class="form-inline" action="{{url('/productos')}}" method="get">
+          <input class="form-control col-md-6 mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search" id="nombre" name="nombre">
           <button class="btn" type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
@@ -156,7 +156,7 @@
 
         <!-- Grid column -->
         <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0">Permenece conectado con el mercado <strong>Somos Nuestra Herencia</strong></h6>
+          <h6 class="mb-0">Permanece conectado con el mercado <strong>Somos Nuestra Herencia</strong></h6>
         </div>
         <!-- Grid column -->
 
