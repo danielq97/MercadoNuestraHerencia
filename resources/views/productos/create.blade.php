@@ -85,7 +85,7 @@
                                 <p class="sepa">Cantidad en bodega</p>
                             </div>
                             <div class="nue">
-                                <input type="text" name="nombre" id="nombre" value="">
+                                <input type="text" name="nombre"  id="nombre" value="">
                                 <div class="seg">
                                     <select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
 
@@ -102,9 +102,10 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion"
-                                    style="width:250px">
-                                </textarea>
+                                
+                                <textarea class="form-control seg" rows="4" cols="50" name="descripcion" id="descripcion"
+                                    style="width:250px" required></textarea>
+                                
                                 <br>
                                 <input type="text" name="cantidad" id="cantidad" value="" class="seg2">
                                 <br>
