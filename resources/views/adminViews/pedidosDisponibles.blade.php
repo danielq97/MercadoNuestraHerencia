@@ -45,11 +45,12 @@
                   <a class="btn btn-info" href="{{ url('/detallereserva/'.$reserva->id) }}">Ver productos</a>
                 </td>
                 <td>
-                    <form action="post" action="{{ url('/pedidosusuario/'.$reserva->id) }}">
+                  <form method="post" action="{{ url('/detallereserva/'.$reserva->id) }}">
+                    @csrf
                     <button type="submit" class="btn btn-success">Completado</button>
-                    </form>
-  
-                  </td>
+                  </form>
+
+                </td>
               </tr>
               @endforeach
 
@@ -58,6 +59,6 @@
         </div>
       </div>
     </div>
-    {{$reservas->links()}}
+
 </section>
 @endsection
