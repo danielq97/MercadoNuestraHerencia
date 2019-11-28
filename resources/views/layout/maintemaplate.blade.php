@@ -140,6 +140,12 @@
 
   @yield('content')
 
+
+
+
+
+</body>
+<footer id="footer">
   <div align="right" class="mr-5">
     <address>
       <p><i class="material-icons">pin_drop</i> Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
@@ -148,13 +154,17 @@
     <a href="/contact-us"><i class='far fa-envelope'></i> Contactar</a>
 
   </div>
-
-</body>
+</footer>
 
 <style>
   .centro {
     margin-top: 40px;
     color: black;
+  }
+
+  #footer{
+    background: gray;
+    position: relative;
   }
 
   .bandacarrusel {

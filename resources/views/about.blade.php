@@ -55,10 +55,10 @@
 
             </div>
             <p class="mt-3">Tenemos una tienda fisica ubicada en la siguiente dirección:</p>
-            <p>Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
+            <p><i class="material-icons">pin_drop</i> Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
             <h1 class="mt-3">Números de télefono</h1>
             <p>Estos son nuestros números de télefono</p>
-            <p>Celular: 3183449646 - 3005103650</p>
+            <p><i class='fas fa-mobile-alt'></i> Celular: 3183449646 - 3005103650</p>
           </div>
 
         </div>

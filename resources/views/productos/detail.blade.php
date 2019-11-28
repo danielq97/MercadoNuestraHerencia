@@ -68,8 +68,8 @@
                         </div>
                         <br><br>
                         <div class=row>
-                            <p class="ml-sm-5">{{$producto->nombre}}</p>
-                            <input type="submit" value="Agregar"><i class="fas fa-shopping-cart"></i>Agregar</a>
+                            <p class="ml-sm-5 mr-3">{{$producto->nombre}}</p>
+                            <a class="btn btn-info" href="{{ url('/productoDetalle/'.$producto->id) }}"> Ver producto <i class="far fa-eye"></i></a>
                         </div>
 
                     </div>
