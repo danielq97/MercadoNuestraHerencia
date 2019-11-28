@@ -12,6 +12,7 @@ class PedidosDisponiblesController extends Controller
 
    public function __construct()
     {
+      $this->middleware('auth');
         $this->middleware('admin');
     }
 
@@ -28,19 +29,23 @@ class PedidosDisponiblesController extends Controller
         echo 'store';
      }
      public function show($id) {
-      //  $detallePedidos = Reserva::find($id)->producto_reservas;    
-      //  $detallePedidos = ProductoReserva::
-   // join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $id)->get();
-    return response()->json($id);      
-    //   return view ('/adminViews/detallepedido',compact('detallePedidos'));
+        $detallePedidos = Reserva::find($id)->producto_reservas;    
+        $detallePedidos = ProductoReserva::
+    join('productos', 'productos.id', '=', 'producto_reservas.idProducto')->where('producto_reservas.reserva_id', '=', $id)->get();
+    //return response()->json($id);      
+       return view ('/adminViews/detallepedido',compact('detallePedidos'));
      }
      public function edit($id) {
         echo 'edit';
      }
 
-     
-
-   
+     //actualizar estado del pedido 1.Completado
+     public function update($id) {
+      $detallePedidos = Reserva::findOrFail($id);
+      $detallePedidos->estado = "C";
+      $detallePedidos->save();
+      return redirect('/pedidosDisponibles');
+     }
      public function destroy($id) {
         echo 'destroy';
      }

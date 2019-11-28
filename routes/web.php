@@ -56,6 +56,8 @@ Route::get('/pedidosusuario/{id}','PedidosUserController@show');
 
 Route::get('/detallereserva/{id}','PedidosDisponiblesController@show');
 
+Route::post('/detallereserva/{id}','PedidosDisponiblesController@update');
+
 
 
 
