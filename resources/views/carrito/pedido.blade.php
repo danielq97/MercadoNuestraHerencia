@@ -32,12 +32,12 @@
 	<p>{{$producto->descripcion}}</p>
 </td>
 
-<td class="price" id="precioUnidad">{{$producto->precio}}</td>
+<td class="price" id="precioUnidad">$ {{$producto->precio}}</td>
 
 <td class="quantity">
 	
 		<input onchange="changePrice(this)"  type="number" name="cantidad" id="cantidad" class="quantity"
-			value="{{$producto->cantidadReserva}}" min="1" max="{{$producto->cantidad}}">
+			value="{{$producto->cantidadReserva}}" min="1" max="{{$producto->cantidad}}" disabled>
 	
 </td>
 

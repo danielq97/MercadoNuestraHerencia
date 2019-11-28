@@ -40,7 +40,7 @@
                                     en bodega</p>
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-success" value="Agregar al carrito">
+                        <input type="submit"  class="btn btn-success" onclick="changeCart(this)" value="Agregar al carrito">
                     </div>
                 </div>
             </div>
@@ -83,6 +83,25 @@
     
 
 </body>
+<script>
+function changeCart(element){
+
+
+
+
+	 
+	
+  
+	alert("Ha sido añadido su producto al carrito, puede seguir añadiendo productos o darle al carrito para continuar su pedido");
+	
+  
+
+	
+//	$('#precioIndividual').val(cantidad + 1);
+}
+
+
+</script>
 
 
 

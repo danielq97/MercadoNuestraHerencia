@@ -131,7 +131,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>Carrito</a>
+          <a class="nav-link" href="/cart" id="carrito" name="carrito"><i class="fas fa-shopping-cart"></i>Carrito</a>
         </li>
       </ul>
 
@@ -276,6 +276,10 @@
 <!-- Footer -->
 
 <style>
+.fa-circle {
+  color: red;
+}
+
   .centro {
     margin-top: 40px;
     color: black;
