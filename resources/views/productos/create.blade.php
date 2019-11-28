@@ -123,10 +123,9 @@
 
                             @foreach($data['productos'] as $producto)
                             <a class="list-group-item list-group-item-action">
-                                {{$producto->nombre}} 
+                                {{$producto->nombre}}
                                 <p>Cantidad en bodega: {{ $producto->cantidad }}</p>
-                                <form style="center"
-                                    action="{{url('/productos/'.$producto->id.'/edit')}}">
+                                <form style="center" action="{{url('/productos/'.$producto->id.'/edit')}}">
                                     <input type="submit" class="btn btn-primary" value="Editar" />
                                 </form>
                             </a>
@@ -137,5 +136,6 @@
                 </div>
             </tr>
         </table>
-
+    </div>
+</div>
         @endsection
