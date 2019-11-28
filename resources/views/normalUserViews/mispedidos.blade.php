@@ -14,7 +14,7 @@
                 <th>Dirección</th>
                 <th>Teléfono</th>
                 <th>Fecha</th>
-                <th>Precio total</th>
+                <th>Precio</th>
                 <th>¿Domicilio?</th>
                 <th>Estado</th>
                 <th></th>
