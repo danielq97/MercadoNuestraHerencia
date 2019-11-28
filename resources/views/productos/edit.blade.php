@@ -60,7 +60,7 @@
 
 
 
-<div>
+<div align="center">
 
 
     <div class="row nue">
@@ -89,7 +89,7 @@
                                         height="200px"></div>
 
                                 <br><br><br>
-                                <input type="file"  name="foto" id="foto" style="width:200px"></input>
+                                <input type="file" name="foto" id="foto" style="width:200px"></input>
 
 
 
@@ -169,12 +169,12 @@
 
                             @foreach($data['productos'] as $producto)
                             <a class="list-group-item list-group-item-action">{{$producto->nombre}}
-                            <p>Cantidad en bodega: {{ $producto->cantidad }}</p>    
-                            <form style="center"
-                                    action="{{url('/productos/'.$producto->id.'/edit')}}">
+                                <p>Cantidad en bodega: {{ $producto->cantidad }}</p>
+                                <form style="center" action="{{url('/productos/'.$producto->id.'/edit')}}">
 
                                     <input type="submit" class="btn btn-primary" value="Editar" />
-                                </form></a>
+                                </form>
+                            </a>
                             <!-- <li class="list-group-item">{{$producto->nombre}}</li> -->
                             @endforeach
 
@@ -187,9 +187,9 @@
 
 
         </table>
+    </div>
+</div>
 
 
 
-
-
-        @endsection
+@endsection
