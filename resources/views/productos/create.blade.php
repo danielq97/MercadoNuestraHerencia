@@ -56,7 +56,7 @@
     }
 </style>
 
-<div align="center">
+<div>
     <div class="row nue">
 
         <!-- Espacio para formulario -->

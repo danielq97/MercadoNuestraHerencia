@@ -60,7 +60,7 @@
 
 
 
-<div align="center">
+<div>
 
 
     <div class="row nue">
