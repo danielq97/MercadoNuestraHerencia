@@ -141,9 +141,6 @@
   @yield('content')
 
 
-
-
-
 </body>
 
 <footer class="page-footer font-small unique-color-dark">
