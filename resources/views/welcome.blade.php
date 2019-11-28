@@ -19,16 +19,16 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-10 h-10"
+        <img class="d-block w-100"
           src="https://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/04/principalrrrrrrrrrr.jpg?itok=SR28-NuI"
           alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-10 h-10" src="https://biotrendies.com/wp-content/uploads/2015/06/manzana.jpg"
+        <img class="d-block w-100" src="https://biotrendies.com/wp-content/uploads/2015/06/manzana.jpg"
           alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-10 h-10"
+        <img class="d-block w-100"
           src="https://http2.mlstatic.com/arbol-de-guanabana-enano-p-maceta-o-tierra-ver-descripcion-D_NQ_NP_940104-MLM31228448187_062019-F.jpg"
           alt="Third slide">
       </div>
@@ -100,7 +100,7 @@
 <script>
   $( document ).ready(function(){
       $('.carousel').carousel({
-        interval: 1000
+        interval: 2500
       })
   });
 </script>
