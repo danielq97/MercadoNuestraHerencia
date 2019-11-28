@@ -106,21 +106,7 @@ class ProductoController extends Controller
         //
        
     }
-    //Método para buscar productos relacionados
-    public function showBusqueda(Request $request)
-    {
-         
-
-        //$productos = DB::table('productos')->paginate(12);
-
-        //$datosProducto['productos'] = Producto::paginate(5);
-        // return view('productos/show', ['productos' => $productos]);
-         
-      
-        return response()->json($request);
-       
-    }
-
+   
 
     /**
      * Show the form for editing the specified resource.
