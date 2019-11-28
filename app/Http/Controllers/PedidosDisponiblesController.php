@@ -12,6 +12,7 @@ class PedidosDisponiblesController extends Controller
 
    public function __construct()
     {
+      $this->middleware('auth');
         $this->middleware('admin');
     }
 
@@ -39,16 +40,11 @@ class PedidosDisponiblesController extends Controller
      }
 
      //actualizar estado del pedido 1.Completado
-     public function update(Request $request, $id) {
-      $detallePedidos = Reserva::find($id)->producto_reservas;
-      if($id==1){
-         $detallePedidos->estado = $request->get()
-         return redirect("/pedidosDisponibles")
-      }
-      
-
-
-
+     public function update($id) {
+      $detallePedidos = Reserva::findOrFail($id);
+      $detallePedidos->estado = "C";
+      $detallePedidos->save();
+      return response()->json($detallePedidos);
      }
      public function destroy($id) {
         echo 'destroy';

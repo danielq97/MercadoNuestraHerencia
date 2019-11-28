@@ -23,8 +23,8 @@
               </tr>
             </thead>
             <tbody>
-              
-                @foreach ($reservas as $reserva)
+
+              @foreach ($reservas as $reserva)
               <tr class="text-center">
                 <td class="addres">{{ $reserva->direccion }}</td>
                 <td class="phone">{{ $reserva->telefono }}</td>
@@ -41,19 +41,15 @@
                 <td class="estado">Completado</td>
                 @endif
                 <td class="user">{{ $reserva->name }}</td>
-                <td class="action">
+                <td>
                   <a class="btn btn-info" href="{{ url('/detallereserva/'.$reserva->id) }}">Ver productos</a>
-                  <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Opciones de pedido
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Completado</a>
-                        <a class="dropdown-item" href="#">Cancelado</a>
-                      </div>
-                    </div>
                 </td>
-                </td>
+                <td>
+                    <form action="post" action="{{ url('/pedidosusuario/'.$reserva->id) }}">
+                    <button type="submit" class="btn btn-success">Completado</button>
+                    </form>
+  
+                  </td>
               </tr>
               @endforeach
 
