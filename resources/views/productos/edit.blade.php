@@ -108,7 +108,7 @@
                             </div>
                             <div class="nue">
 
-                                <input type="text" name="nombre" id="nombre" value="{{$producto->nombre}}">
+                                <input type="text" name="nombre" id="nombre" value="{{$producto->nombre}}" required>
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-                                <input type="text" name="precio" id="precio" value="{{$producto->precio}}" class="seg">
+                                <input type="text" name="precio" id="precio" value="{{$producto->precio}}" class="seg" required>
 
 
                                 <div class="seg">
@@ -144,14 +144,14 @@
                                 </div>
 
                                 <textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion"
-                                    style="width:250px">{{$producto->descripcion}}</textarea>
+                                    style="width:250px" required>{{$producto->descripcion}}</textarea>
 
                                 <br>
                                 <input type="text" name="cantidad" id="cantidad" value="{{$producto->cantidad}}"
-                                    class="seg2">
+                                    class="seg2" required>
                                 <br>
                                 <br>
-                                <input type="submit" class="btn btn-success" value="Agregar">
+                                <input type="submit" class="btn btn-success" value="Actualizar">
 
                             </div>
 

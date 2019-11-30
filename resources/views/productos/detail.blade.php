@@ -31,7 +31,7 @@
                             <div class="input-group col-md-6 d-flex mb-3">
 
                                 <input type="number" id="cantidad" name="cantidad" class="form-control input-number"
-                                    value="1" min="1" max="{{$producto->cantidad}}">
+                                    value="0" min="0" max="{{$producto->cantidad}}">
 
                             </div>
                             <div class="w-100"></div>
@@ -86,15 +86,26 @@
 <script>
 function changeCart(element){
 
+   
+    var cantidad = parseInt($('#cantidad').val());
+ 
 
+ if(cantidad==0){
+    alert("En el momento no está disponible este producto en la tienda");
+ }
+ else if(cantidad> $producto->cantidad || cantidad < $producto->cantidad ){
 
-
+	
+ }
+else{
 	 
 	
   
 	alert("Ha sido añadido su producto al carrito, puede seguir añadiendo productos o darle al carrito para continuar su pedido");
 	
   
+  
+}
 
 	
 //	$('#precioIndividual').val(cantidad + 1);

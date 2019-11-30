@@ -73,7 +73,7 @@
                                         src="http://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg"
                                         width="200px" height="200px"></div>
                                 <br><br><br>
-                                <input type="file" name="foto" id="foto" style="width:200px"></input>
+                                <input type="file" name="foto" id="foto" style="width:200px" required></input>
 
                             </div>
                             <div class="nue">
@@ -85,8 +85,7 @@
                                 <p class="sepa">Cantidad en bodega</p>
                             </div>
                             <div class="nue">
-                                
-                                {!! Form::text('nombre', null, ['class' => 'form-control' , 'required' => 'required']) !!}
+                                <input type="text" name="nombre"  id="nombre" required>
                                 <div class="seg">
                                     <select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
 
@@ -95,7 +94,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <input type="text" name="precio" id="precio" value="" class="seg">
+                                <input type="text" name="precio" id="precio" class="seg" required>
                                 <div class="seg">
                                     <select id="list" style="height:40px" name="categoria_id" id="categoria_id">
                                         @foreach($data['categorias'] as $categoria)
@@ -104,11 +103,11 @@
                                     </select>
                                 </div>
                                 
-                                <textarea class="form-control seg" rows="4" cols="50" name="descripcion" id="descripcion"
+                                <textarea class="seg" rows="4" cols="50" name="descripcion" id="descripcion"
                                     style="width:250px" required></textarea>
                                 
                                 <br>
-                                <input type="text" name="cantidad" id="cantidad" value="" class="seg2">
+                                <input type="text" name="cantidad" id="cantidad" class="seg2" required>
                                 <br>
                                 <br>
                                 <input type="submit" class="btn btn-success" value="Agregar">
@@ -125,9 +124,10 @@
 
                             @foreach($data['productos'] as $producto)
                             <a class="list-group-item list-group-item-action">
-                                {{$producto->nombre}}
+                                {{$producto->nombre}} 
                                 <p>Cantidad en bodega: {{ $producto->cantidad }}</p>
-                                <form style="center" action="{{url('/productos/'.$producto->id.'/edit')}}">
+                                <form style="center"
+                                    action="{{url('/productos/'.$producto->id.'/edit')}}">
                                     <input type="submit" class="btn btn-primary" value="Editar" />
                                 </form>
                             </a>
@@ -138,6 +138,5 @@
                 </div>
             </tr>
         </table>
-    </div>
-</div>
+
         @endsection

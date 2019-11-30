@@ -14,7 +14,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label for="firstname">Nombre completo</label>
-                <input type="text" class="form-control" placeholder="">
+                <input id="nombre" type="text" class="form-control" placeholder="" required>
               </div>
             </div>
             <div class="w-100"></div>
@@ -23,7 +23,7 @@
               <div class="form-group">
                 <label for="streetaddress">Dirección</label>
                 <input id="direccion" name="direccion" type="text" class="form-control"
-                  placeholder="Dirección de residencia, barrio">
+                  placeholder="Dirección de residencia, barrio" required>
               </div>
             </div>
             <div class="w-100"></div>
@@ -31,7 +31,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="phone">Teléfono</label>
-                <input id="telefono" name="telefono" type="text" class="form-control" placeholder="Teléfono">
+                <input id="telefono" name="telefono" type="text" class="form-control" placeholder="Teléfono" required>
               </div>
             </div>
             <div class="col-md-6">
@@ -39,10 +39,10 @@
             <div class="w-100"></div>
             <div class="col-md-12">
               <div class="form-group mt-4">
-                <div class="radio" id="domicilio" >
-                  <label class="mr-3"><input id="domicilio" name="domicilio" value='T' type="radio" name="optradio"> Paso a recoger el
+                <div class="radio" id="domicilio">
+                  <label class="mr-3"><input id="domicilio" name="domicilio" value='T' type="radio" name="optradio" required> Paso a recoger el
                     producto </label>
-                  <label><input id="domicilio" name="domicilio" value="D" type="radio" name="optradio"> Pagar al recibir el
+                  <label><input id="domicilio" name="domicilio" value="D" type="radio" name="optradio" required> Pagar al recibir el
                     producto</label>
                 </div>
               </div>
@@ -88,12 +88,18 @@ function changeCart(element){
 
 
 
-
+var nombre  =$('#nombre').val();
 	 
-	
+var direccion  =$('#direccion').val();
+var telefono  =$('#telefono').val();
+var domicilio  =$('#domicilio').val();
   
-alert("Ha finalizado su pedido, la tienda se pondrá en contacto con usted");
 
+  if(nombre!=null && direccion !=null && telefono!=null){
+
+}else{
+alert("Ha finalizado su pedido, la tienda se pondrá en contacto con usted");
+}
 
 
 

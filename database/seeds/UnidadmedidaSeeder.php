@@ -21,13 +21,6 @@ class UnidadmedidaSeeder extends Seeder
            'nombre'=>"Atado"
            
        ]);
-       Unidad_Medida::create([
-           'nombre'=>"Panal"
-           
-       ]);
-       Unidad_Medida::create([
-        'nombre'=>"Litros"
-        
-    ]);
+      
     }
 }
