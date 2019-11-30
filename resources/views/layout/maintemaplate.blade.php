@@ -207,26 +207,7 @@
       </div>
       <!-- Grid column -->
 
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">MDBootstrap</a>
-        </p>
-        <p>
-          <a href="#!">MDWordPress</a>
-        </p>
-        <p>
-          <a href="#!">BrandFlow</a>
-        </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p>
-
-      </div>
+    
       <!-- Grid column -->
 
       <!-- Grid column -->
@@ -256,8 +237,7 @@
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
           <i class="fas fa-home mr-3"></i> Carrera 26# 34-60 Barrio: Obrero, Palmira Valle</p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> <a href="/contact-us">Contactar</a> </p>
+        
         <p>
           <i class="fas fa-phone mr-3"></i> 3183449646</p>
         <p>

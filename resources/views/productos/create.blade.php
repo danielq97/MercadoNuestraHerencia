@@ -85,7 +85,8 @@
                                 <p class="sepa">Cantidad en bodega</p>
                             </div>
                             <div class="nue">
-                                <input type="text" name="nombre"  id="nombre" value="">
+                                
+                                {!! Form::text('nombre', null, ['class' => 'form-control' , 'required' => 'required']) !!}
                                 <div class="seg">
                                     <select id="unidadmedida_id" name="unidadmedida_id" style="height:40px">
 

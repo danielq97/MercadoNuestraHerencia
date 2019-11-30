@@ -181,8 +181,10 @@
 
                         </ul>
                     </div>
-
+                    <a class="btn btn-success" href="/productos/create">Crear nuevo producto</a>
                 </div>
+
+                
             </tr>
 
 

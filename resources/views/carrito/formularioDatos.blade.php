@@ -51,7 +51,7 @@
           <div class="col-md-12">
             <div class="cart-detail p-3 p-md-4">
             </div>
-            <input class="btn btn-success" type="submit" value="Crear Pedido">
+            <input class="btn btn-success" onclick="changeCart(this)"     type="submit" value="Crear Pedido">
           </div>
         </form><!-- END -->
       </div>
@@ -82,4 +82,25 @@
   </div>
   </div>
 </section> <!-- .section -->
+
+<script>
+function changeCart(element){
+
+
+
+
+	 
+	
+  
+alert("Ha finalizado su pedido, la tienda se pondrá en contacto con usted");
+
+
+
+
+//	$('#precioIndividual').val(cantidad + 1);
+}
+
+
+</script>
+
 @endsection

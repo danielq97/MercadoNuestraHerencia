@@ -63,8 +63,20 @@ class ReservaController extends Controller
         $reserva->domicilio =$request->get('domicilio') ;
         $reserva->estado = 'A';
 
+
+        $productoReservas =  Reserva::find($user->reservaActiva_id)->producto_reservas;    
+        foreach($productoReservas as $pr){
+            $producto = Producto::findOrFail($pr->idProducto);
+            $cantidadAnterior = $producto->cantidad;
+            $producto->cantidad =($cantidadAnterior) - ($pr->cantidadReserva) ;
+            $producto->save();
+        
+        }
+
         $user->reservaActiva_id = null;
         $user-> save();
+
+       
 
         $reserva->save();
 
@@ -136,7 +148,11 @@ class ReservaController extends Controller
 
                 $producto = Producto::findOrFail($idProducto);
 
+
                 $reserva = Reserva::findOrFail($user->reservaActiva_id);
+
+
+                
                 //$reserva->usuario_id = Auth::user()->id;
                 //$reserva->fecha = now();
 
