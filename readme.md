@@ -1,15 +1,15 @@
-#Proyecto "Somos Nuestra Herencia"
+# Proyecto "Somos Nuestra Herencia"
 
 Este es un proyecto web creado en [Laravel](https://laravel.com)
 
-#Pre-requisitos del proyecto
+# Pre-requisitos del proyecto
 Pre-requisitos para el funcionamiento de este proyecto:
     1. Tener instalado XAMPP.
-    2. Tenes instalado Laravel.
+    2. Tener instalado Laravel.
     3. Tener instalado PHP.
-    3. Tenes instalado composer.
+    3. Tener instalado composer.
 
-#Para correr el proyecto
+# Para correr el proyecto
 
 Instalar dependencias de composer en el proyecto
 
@@ -40,7 +40,7 @@ Para iniciar el proyecto en el servidor de desarrollo:
 ```
 php artisan serve
 ```
-#Despliegue en AWS (Amazon Web Services)
+# Despliegue en AWS (Amazon Web Services)
 Para ver documentación sobre el despliguen en AWS Elastic Beanstalk [ver el siguiente video](https://www.youtube.com/watch?v=W4aDBygslW8)
 
 Nota: para ver el funcionamiento de la plataforma visitar la seccion de ayuda.
